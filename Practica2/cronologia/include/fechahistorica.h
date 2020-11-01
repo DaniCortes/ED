@@ -41,6 +41,7 @@ class FechaHistorica {
 /**
   * @brief Sobrecarga del operador <<
   */
+
 std::ostream &operator<<(std::ostream &os, const FechaHistorica &f);
 
 /**
