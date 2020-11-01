@@ -1,0 +1,3 @@
+· Teniendo en cuenta la situación del mejor caso, el primer bucle for únicamente hace una iteración, por lo que no se considera 
+  para calcular la eficiencia teórica como orden O(n), sino como orden O(1). Por tanto, la eficiencia teórica del algoritmo en el
+  mejor caso es de orden O(n), por lo que la función es lineal, como se puede observar en las imágenes en esta carpeta.

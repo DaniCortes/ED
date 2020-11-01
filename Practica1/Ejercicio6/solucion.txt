@@ -1,0 +1,2 @@
+· Como se puede observar en la imagen comparación.png, la eficiencia del programa mejora sustancialmente, haciendo
+  que el algoritmo tarde poco menos de la mitad de tiempo en completar las ordenaciones que si no estuviese optimizado.

@@ -1,0 +1,3 @@
+· La eficiencia teórica del algoritmo de multiplicación de matrices bidimensionales es de orden O(n³)
+· La eficiencia empírica está en la imagen eficiencia_empírica.png. Se puede observar que ambas eficiencias coinciden,
+  tomando la eficiencia temporal como f(x) = ax³+bx²+cx+d

@@ -1,0 +1,5 @@
+· Es un algoritmo de búsqueda de un número en un vector de enteros estrictamente ascendente.
+
+· Suponiendo que las operaciones elementales tienen un orden O(1), el algoritmo tiene un orden de log2(n).
+
+· De la gráfica de la eficiencia empírica no se puede concluir nada (imagen eficiencia_empírica.png).

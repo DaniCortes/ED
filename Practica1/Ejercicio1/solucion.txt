@@ -1,0 +1,7 @@
+· He usado el código del archivo busqueda_lineal.cpp, cambiando únicamente
+  la función de buscar por la de ordenación mediante el algoritmo de la burbuja.
+
+· La eficiencia teórica del algoritmo es de orden O(n²) al tener dos bucles for anidados.
+
+· Al comparar la eficiencia teórica con la empírica, se observa que la eficiencia empírica 
+  se queda bastante lejos de lejos esperado con respecto a la eficiencia teórica.

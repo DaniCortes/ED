@@ -1,0 +1,2 @@
+· Habiendo considerado que f(x) = ax²+bx+c y usando el comando fit en gnuplot, ahora sí coinciden 
+  tanto la eficiencia teórica como la empírica, como se observa en la imagen ejercicio2.png

@@ -1,0 +1,3 @@
+· Como se puede observar en la imagen comparacion_casos.png, la eficiencia empírica en el peor caso es peor que la eficiencia 
+  empírica en el mejor caso, pero comparando las dos eficiencias con la eficiencia del ejercicio 1 se puede observar que los tiempos
+  del ejercicio 1, donde los datos son aleatorios, son mayores que el peor caso aquí calculado.
