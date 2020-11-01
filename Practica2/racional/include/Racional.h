@@ -29,9 +29,8 @@ using namespace std;
   */
 
 class Racional {
-
- private:
-/**
+  private:
+   /**
   * @page repConjunto Rep del TDA Racional
   *
   * @section invConjunto Invariante de la representación
@@ -46,97 +45,96 @@ class Racional {
   *
   */
 
-  int num; /**< numerador */
-  int den; /**< denominador */
+   int num; /**< numerador */
+   int den; /**< denominador */
 
- public:
-
-/**
+  public:
+   /**
   * @brief Constructor por defecto de la clase. Crea el número racional 0/1
   */
-  Racional();
+   Racional();
 
-/**
+   /**
   * @brief Constructor de la clase
   * @param n numerador del racional a construir
   * @param d denominador del racional a construir
   * @return Crea el número racional n/d
   * @pre d debe ser distinto de cero
   */
-  Racional(int n, int d);  
-  // Racional(int n=0, int d=1): num(n),den(d) {}
+   Racional(int n, int d);
+   // Racional(int n=0, int d=1): num(n),den(d) {}
 
-/**
+   /**
   * @brief Constructor de copias de la clase
   * @param c.num numerador del racional a construir
   * @param c.den denominador del racional a construir
   */
-  Racional (const Racional& c);  
+   Racional(const Racional& c);
 
-/**
+   /**
   * @brief Numerador
   * @return Devuelve el numerador del racional
-  */ 
-  int numerador ();
+  */
+   int numerador();
 
-/**
+   /**
   * @brief Denominador
   * @return Devuelve el denominador del racional
   */
-  int denominador();
+   int denominador();
 
-/**
+   /**
   * @brief Asignación de un racional
   * @param n numerador del racional a asignar
   * @param d denominador del racional a asignar
   * @return Asigna al objeto implícito el número racional n/d
   * @pre d debe ser distinto de cero
-  */   
-  void asignar(int n, int d);
+  */
+   void asignar(int n, int d);
 
-/**
+   /**
   * @brief Compara dos racionales
   * @param r racional a comparar
   * @return Devuelve 0 si este objeto es igual a r, 
   *                  <0 si este objeto es menor que r, 
   *                  >0 si este objeto es mayor que r 
-  */   
-  bool comparar(Racional r);
+  */
+   bool comparar(Racional r);
 
-/**
+   /**
   * @brief Imprime un racional en el formato "(n/d)";
   */
-  void  print();
+   void print();
 
-/**
+   /**
   * @brief Suma dos racionales
   * @param r racional a sumar con el objeto implícito
   */
-  Racional operator+(const Racional & r);
+   Racional operator+(const Racional& r);
 
-/**
+   /**
   * @brief Sobrecarga del operador +=
   * @param r racional a sumar con el objeto implícito
-  */ 
-  void operator+=(const Racional &r);
-  
-/**
+  */
+   void operator+=(const Racional& r);
+
+   /**
   * @brief Sobrecarga del operador ==
   * @param r racional a comparar con el objeto implícito
   * @return Devuelve 0 si este objeto es igual a r
-  */  
-  bool operator ==(const Racional &r);
+  */
+   bool operator==(const Racional& r);
 
-/**
+   /**
   * @brief Salida de un racional a ostream
   * @param os stream de salida
   * @param r Racional a escribir
   * @post Se obtiene en \a os la cadena (num/den) con \e num,den los valores
   *   del numerador y denominador de \a r
   */
-  friend ostream& operator<< (ostream& os, const Racional& r);
+   friend ostream& operator<<(ostream& os, const Racional& r);
 
-/**
+   /**
   * @brief Entrada de un Racional desde istream
   * @param is stream de entrada
   * @param r Racional que recibe el valor
@@ -144,21 +142,21 @@ class Racional {
   * @pre La entrada tiene el formato (num/den) con \e num,\e den los valores
   *   del numerador y denominador
   */
-  friend istream& operator>> (istream& is, Racional& r);
+   friend istream& operator>>(istream& is, Racional& r);
 
-/**
-  * @brief Convierte un racional en irreducible;
+   /**
+  * @brief Convierte un racional en irreducible
   */
-  Racional  simplifica();
+   Racional simplifica();
 
-/**
+   /**
   * @brief suma dos racionales
   * @param r racional a sumar con el objeto implícito
 */
 
-/************* INCLUIR OTRAS FUNCIONES y OPERADORES *********/
+   /************* INCLUIR OTRAS FUNCIONES y OPERADORES *********/
 
-/* Por ejemplo:
+   /* Por ejemplo:
    la función irreducible que nos convierta un racional r
    en irreducible, ej. 12/4 -> 3/1
    la función real que devuelva el valor real asociado al racional
@@ -166,7 +164,6 @@ class Racional {
 
    Operador de resta, multiplicación, división, etc.  
 */
- 
 };
 
 #endif

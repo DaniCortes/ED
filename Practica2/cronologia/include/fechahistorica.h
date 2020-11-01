@@ -11,47 +11,41 @@
  * @author Completar
 */
 
-class FechaHistorica{
+class FechaHistorica {
+  private:
+   //Completar
 
-private:
-
-  //Completar
-
-public:
-/**
+  public:
+   /**
   * @brief Constructor por defecto
   */
-FechaHistorica();
+   FechaHistorica();
 
-/**
+   /**
   * @brief Constructor de copia
   * 
   * @param fh un objeto de FechaHistorica
   */
-FechaHistorica(const FechaHistorica &f);
+   FechaHistorica(const FechaHistorica &f);
 
-/**
+   /**
   * @brief Sobrecarga del operador =
   * 
   * @param fh un objeto de FechaHistorica
   */
-FechaHistorica& operator=(const FechaHistorica &f);
+   FechaHistorica &operator=(const FechaHistorica &f);
 
-
-// Completar ... 
-
+   // Completar ...
 };
 
 /**
   * @brief Sobrecarga del operador <<
   */
-
-
-std::ostream& operator<<(std::ostream &os, const FechaHistorica &f);
+std::ostream &operator<<(std::ostream &os, const FechaHistorica &f);
 
 /**
   * @brief Sobrecarga del operador >>
   */
-std::istream& operator>>(std::istream &is, FechaHistorica &f);
+std::istream &operator>>(std::istream &is, FechaHistorica &f);
 
 #endif
