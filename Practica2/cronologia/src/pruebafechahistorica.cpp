@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include "fechahistorica.h"
+#include "utiles.h"
 
 using namespace std;
 
