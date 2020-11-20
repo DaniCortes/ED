@@ -8,12 +8,13 @@
  *
  * @brief Completar
  *
- * @author Completar
+ * @author Daniel Cortés
 */
 
 class FechaHistorica {
   private:
-   //Completar
+   int anio;
+
 
   public:
    /**

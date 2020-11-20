@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include "cronologia.h"
+#include "utiles.h"
 
 using namespace std;
 

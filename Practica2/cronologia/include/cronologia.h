@@ -2,18 +2,20 @@
 #define _CRONOLOGIA_H_
 
 #include "fechahistorica.h"
+#include "lista.h"
 
 /**
  * @class Cronologia
 
  * @brief Completar
  
- * @author Completar
+ * @author Daniel Cortés
 */
+
 
 class Cronologia {
   private:
-   // Completar la representación
+   Lista<FechaHistorica> fechas_historicas;
 
   public:
    /**
