@@ -26,6 +26,10 @@ int main(int argc, char* argv[]) {
    f >> mi_cronologia1;   //Cargamos en memoria la cronología.
    g >> mi_cronologia2;
 
+   //cout << mi_cronologia1.ObtenerEventos(1900, 1930) << endl;
+
+  cout << mi_cronologia1;
+
    /* Exhibir aquí la funcionalidad programada para el TDA Cronologia / TDA FechaHistorica */
 
    // Algunas sugerencias:

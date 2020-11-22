@@ -33,9 +33,10 @@ FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
 }
 
 FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {
-   FechaHistorica tmp;
-   tmp.anio = f.anio;
-   tmp.eventos = eventos + f.eventos;
+   FechaHistorica tmp = *this;
+   if (anio == f.anio){
+      tmp.eventos += f.eventos;
+   }
    return tmp;
 }
 
@@ -56,12 +57,13 @@ bool FechaHistorica::operator!=(const FechaHistorica &f) const {
 };
 
 ostream &operator<<(ostream &os, const FechaHistorica &f) {
-   os << "Año: " << f.anio;
+   os << "Año: " << f.anio << endl;
    
    for (int i = 0; i < f.eventos.getNumDatos(); i++) {
-      os << "\n\t" << f.eventos.get(i);
+      os << "\t Evento " << i << ": " << f.eventos.get(i) << endl;
    }
 
+   os << endl;
    
    return os;
 }

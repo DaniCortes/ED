@@ -6,17 +6,21 @@
 #include "lista.h"
 
 /**
-* @class FechaHistorica
-*
-* @brief Completar
-*
-* @author Daniel Cortés
+ * @class FechaHistorica
+ *
+ * @brief T.D.A. FechaHistorica
+ * 
+ * Una instancia @e fh del tipo de datos abstracto @c FechaHistorica es un
+ * objeto formado por un @c int que indica el año y una @c Lista de objetos
+ * de tipo @c string que indica los eventos ocurridos en ese año
+ * 
+ * @author Daniel Cortés
 */
 
 class FechaHistorica {
+  private:
    int anio;
    Lista<std::string> eventos;
-
 
   public:
    /**
@@ -27,7 +31,7 @@ class FechaHistorica {
    /**
    * @brief Constructor de copia
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica para construir el objeto implícito
    */
    FechaHistorica(const FechaHistorica &f);
 
@@ -36,7 +40,7 @@ class FechaHistorica {
    * 
    * @param anio el año de la fecha histórica
    * 
-   * @param eventos la lista de eventos ocurridos en ese año
+   * @param eventos @c Lista de eventos ocurridos en ese año
    */
    FechaHistorica(const int anio, const Lista<std::string> eventos);
 
@@ -47,6 +51,7 @@ class FechaHistorica {
 
    /**
    * @brief Descriptor del año
+   * 
    * @param anio un entero que indica el año
    */
    void setAnio(int anio);
@@ -59,38 +64,38 @@ class FechaHistorica {
    /**
    * @brief Sobrecarga del operador =
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica usada para asignar el objeto implícito
    */
    FechaHistorica& operator=(const FechaHistorica &f);
 
    /**
    * @brief Sobrecarga del operador +
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica a sumar con el objeto implícito
    */
    FechaHistorica operator+(const FechaHistorica &f);
 
    /** @brief Sobrecarga del operador <
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica a comparar con el objeto implícito
    */
    bool operator<(const FechaHistorica &f) const;
 
    /** @brief Sobrecarga del operador >
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica a comparar con el objeto implícito
    */
    bool operator>(const FechaHistorica &f) const;
 
    /** @brief Sobrecarga del operador ==
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica a comparar con el objeto implícito
    */
    bool operator==(const FechaHistorica &f) const;
 
    /** @brief Sobrecarga del operador !=
    * 
-   * @param fh un objeto de FechaHistorica
+   * @param fh @c FechaHistorica a comparar con el objeto implícito
    */
    bool operator!=(const FechaHistorica &f) const;
 
@@ -98,12 +103,19 @@ class FechaHistorica {
 
    /**
    * @brief Sobrecarga del operador <<
+   * 
+   * @param os stream de salida
+   * @param fh @c FechaHistorica a mostrar
    */
    friend std::ostream &operator<<(std::ostream &os, const FechaHistorica &f);
 
    /**
-  * @brief Sobrecarga del operador >>
-  */
+   * @brief Sobrecarga del operador >>
+   * 
+   * @param is stream de entrada
+   * @param os stream de salida
+   * @param fh @c FechaHistorica a escribir
+   */
    friend std::istream &operator>>(std::istream &is, FechaHistorica &f);
 
    friend class Cronologia;

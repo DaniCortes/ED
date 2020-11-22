@@ -15,11 +15,6 @@ Cronologia& Cronologia::operator=(const Cronologia& c) {
    return *this;
 }
 
-void Cronologia::insertar(const FechaHistorica& f) {
-   cout << "Insertando FechaHistorica\n";
-   fechas_historicas.add(f);
-}
-
 FechaHistorica Cronologia::ObtenerEventos(int anio) {
    int i = 0;
    FechaHistorica tmp;
@@ -35,11 +30,12 @@ FechaHistorica Cronologia::ObtenerEventos(int anio) {
 }
 
 Cronologia Cronologia::ObtenerEventos(int anioDesde, int anioHasta) {
-   int i;
+   int i = 0;
    Cronologia cr_tmp;
    while(fechas_historicas.get(i).anio < anioDesde) i++;
-   for (; (fechas_historicas.get(i).anio >= anioDesde) && (fechas_historicas.get(i).anio <= anioHasta); i++) {
+   while((fechas_historicas.get(i).anio >= anioDesde) && (fechas_historicas.get(i).anio <= anioHasta)) {
       cr_tmp.fechas_historicas.add(fechas_historicas.get(i));
+      i++;
    }
    return cr_tmp;
 }
@@ -64,41 +60,21 @@ ostream& operator<<(std::ostream& os, const Cronologia& c) {
 
 // Este método se proporciona a medio hacer para facilitar la lectura de una Cronologia a partir de un fichero
 
-istream& operator>>(istream& flujo, Cronologia& c) {
+istream& operator>>(istream& is, Cronologia& c) {
    cout << "Leyendo cronología ..." << endl;
 
    int fh_leidas = 0;
 
    string s;
 
-   Lista<string> prueba;
-   prueba.add("hola");
-   prueba.add("adios");
-   prueba.add("adios");
-
-   cout << "Hola\n";
-   FechaHistorica tmp (1850, prueba);
-   cout << "Hola2\n";
-   cout << tmp << endl;
-   cout << "hola1\n";
-   FechaHistorica tmp2;
-
-   tmp2 = tmp;
-   cout << "GOLA3\n";
-
-   c.fechas_historicas.add(tmp);
-   cout << "Prueba555\n";
-
-   while (getline(flujo, s)) {
+   while (getline(is, s)) {
       istringstream ss(s);
       FechaHistorica aux;
       cout << "Leyendo FechaHistorica número: " << fh_leidas << endl;
       ss >> aux;
-      cout << aux << endl;
       c.fechas_historicas.add(aux);
-
       fh_leidas++;
    }
 
-   return flujo;
+   return is;
 }

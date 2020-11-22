@@ -9,67 +9,90 @@
 
 /**
  * @class Cronologia
-
- * @brief Completar
- 
+ * 
+ * @brief T.D.A. Cronologia
+ * 
+ * Una instancia @e c del tipo de datos abstracto @c Cronologia es un 
+ * objeto formado por una @c Lista de objetos de tipo @c FechaHistorica
+ *
  * @author Daniel Cortés
 */
 
 
 class Cronologia {
   private:
-   Lista<FechaHistorica> fechas_historicas;
+   Lista<FechaHistorica> fechas_historicas; /** @c Lista de objetos tipo @c FechaHistorica */
 
   public:
    /**
-  * @brief Constructor por defecto
-  */
+   * @brief Constructor por defecto
+   */
    Cronologia();
 
    /**
-  * @brief Constructor de copia
-  * 
-  * @param c un objeto de Cronologia
-  */
+   * @brief Constructor de copia
+   * 
+   * @param c @c Cronologia para construir el objeto implícito
+   */
    Cronologia(const Cronologia &c);
 
    /**
-  * @brief Sobrecarga del operador =
-  * 
-  * @param c un objeto de Cronologia
-  */
+   * @brief Sobrecarga del operador =
+   * 
+   * @param c @c Cronologia usada para asignar el objeto implícito
+   */
    Cronologia &operator=(const Cronologia &c);
 
-   void insertar(const FechaHistorica &f);
-
    /**
-  * @brief Destructor
-  */
+   * @brief Destructor
+   */
    ~Cronologia();
 
+   /**
+   * @brief Método que obtiene los eventos ocurridos en un año preciso
+   * 
+   * @param anio año del que se quieren obtener los eventos 
+   */
    FechaHistorica ObtenerEventos(int anio);
 
+   /**
+   * @brief Método que obtiene los eventos ocurridos entre dos años, ambos incluídos
+   * 
+   * @param anioDesde año desde el que se quieren obtener los eventos 
+   * @param anioHasta año hasta el que se quieren obtener los eventos 
+   */
    Cronologia ObtenerEventos(int anioDesde, int anioHasta);
 
    /**
    * @brief Sobrecarga del operador ==
+   * 
+   * @param c @c Cronologia a comparar con el objeto implícito
    */
    bool operator==(const Cronologia &c);
 
    /**
    * @brief Sobrecarga del operador !=
+   * 
+   * @param c @c Cronologia a comparar con el objeto implícito
+   * 
    */
    bool operator!=(const Cronologia &c);
 
    /**
    * @brief Sobrecarga del operador <<
+   * 
+   * @param os stream de salida
+   * @param c @c Cronologia a mostrar
    */
-   friend std::ostream &operator<<(std::ostream &flujo, const Cronologia &c);
+   friend std::ostream &operator<<(std::ostream &os, const Cronologia &c);
 
    /**
-  * @brief Sobrecarga del operador >>
-  */
-   friend std::istream &operator>>(std::istream &flujo, Cronologia &c);
+   * @brief Sobrecarga del operador >>
+   * 
+   * @param is stream de entrada
+   * @param c @c Cronologia a escribir
+   */
+   friend std::istream &operator>>(std::istream &is, Cronologia &c);
 };
 
 

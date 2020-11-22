@@ -37,8 +37,10 @@ Lista<T>::~Lista() {
 template <class T>
 T Lista<T>::get(int index) const {
    NodoLista<T>* tmp = primer_dato;
-   for (int i = 0; i < index-1; i++) {
-      tmp = tmp->siguiente;
+   if (index > 0) {
+      for (int i = 0; i < index; i++) {
+         tmp = tmp->siguiente;
+      }
    }
    return tmp->dato;
 }
@@ -58,8 +60,8 @@ void Lista<T>::add(T dato) {
 }
 
 template <class T>
-Lista<T>& Lista<T>::operator=(const Lista<T>& otra) {
-   if (otra != *this) {
+Lista<T>& Lista<T>::operator=(const Lista<T>& l) {
+   if (l != *this) {
       NodoLista<T>* tmp;
       num_datos = 0;
 
@@ -73,37 +75,36 @@ Lista<T>& Lista<T>::operator=(const Lista<T>& otra) {
       ultimo_dato = primer_dato;
       init = true;
 
-      for (int i = 0; i < otra.num_datos; i++) {
-         add(otra.get(i));
+      for (int i = 0; i < l.num_datos; i++) {
+         add(l.get(i));
       }
    }
    return *this;
 }
 
 template <class T>
-Lista<T> Lista<T>::operator+(const Lista<T>& lista) {
+Lista<T> Lista<T>::operator+(const Lista<T>& l) {
    Lista<T> tmp = *this;
-   for (int i = 0; i < lista.num_datos; i++) {
-      tmp.add(lista.get(i));
+   for (int i = 0; i < l.num_datos; i++) {
+      tmp.add(l.get(i));
    }
    return tmp;
-   
 }
 
 template <class T>
-void Lista<T>::operator+=(const Lista<T>& lista) {
-   for (int i = 0; i < lista.num_datos; i++) {
-      add(lista.get(i));
+void Lista<T>::operator+=(const Lista<T>& l) {
+   for (int i = 0; i < l.num_datos; i++) {
+      add(l.get(i));
    }
 }
 
 template <class T>
-bool Lista<T>::operator==(const Lista<T>& lista) const {
-   if (num_datos != lista.num_datos) {
+bool Lista<T>::operator==(const Lista<T>& l) const {
+   if (num_datos != l.num_datos) {
       return false;
    } else {
       for (int i = 0; i < num_datos; i++) {
-         if ((get(i) != lista.get(i))) {
+         if ((get(i) != l.get(i))) {
             return false;
          }
       }
@@ -112,8 +113,8 @@ bool Lista<T>::operator==(const Lista<T>& lista) const {
 }
 
 template <class T>
-bool Lista<T>::operator!=(const Lista<T>& lista) const {
-   return !(*this == lista);
+bool Lista<T>::operator!=(const Lista<T>& l) const {
+   return !(*this == l);
 }
 
 template class NodoLista<FechaHistorica>;

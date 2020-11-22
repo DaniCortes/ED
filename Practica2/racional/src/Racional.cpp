@@ -27,38 +27,38 @@ void Racional::asignar(int n, int d) {
    den = d;
 }
 
-//Comparación
+
 bool Racional::comparar(Racional r) {
    return ((num * r.den == den * r.num) ? 1 : 0);
 }
 
-//Impresión en cout
+
 void Racional::print() {
    cout << '(' << this->num << '/' << this->den << ')';
 }
 
-//Operador +
+
 Racional Racional::operator+(const Racional& r) {
    return Racional(num * r.den + den * r.num, den * r.den);
 }
 
-//Operador +=
+
 void Racional::operator+=(const Racional& r) {
    num = num * r.den + den * r.num;
    den = den * r.den;
 }
 
-//Operador ==
+
 bool Racional::operator==(const Racional& l) {
    return ((num * l.den == den * l.num) ? 1 : 0);
 }
 
-//Operador <<
+
 ostream& operator<<(ostream& os, const Racional& r) {
    return os << '(' << r.num << ',' << r.den << ')';
 }
 
-//Operador >>
+
 istream& operator>>(istream& is, Racional& r) {
    char caracter;
    int numerador, denominador;
