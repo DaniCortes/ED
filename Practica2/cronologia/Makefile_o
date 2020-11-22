@@ -26,16 +26,15 @@ $(BIN)/pruebafechahistorica: $(OBJ)/pruebafechahistorica.o $(OBJ)/fechahistorica
 	$(CXX) -o $(BIN)/pruebafechahistorica $(OBJ)/pruebafechahistorica.o $(OBJ)/fechahistorica.o $(OBJ)/lista.o
 
 $(OBJ)/pruebafechahistorica.o : $(SRC)/pruebafechahistorica.cpp 
-	$(CXX) $(CPPFLAGS) -o $(OBJ)/pruebafechahistorica.o $(SRC)/pruebafechahistorica.cpp
+	$(CXX) $(CPPFLAGS) -o $(OBJ)/pruebafechahistorica.o $(SRC)/pruebafechahistorica.cpp 
 
-$(OBJ)/cronologia.o : $(SRC)/cronologia.cpp $(INC)/cronologia.h
+$(OBJ)/cronologia.o : $(SRC)/cronologia.cpp $(INC)/cronologia.h $(INC)/lista.h
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/cronologia.o $(SRC)/cronologia.cpp
 
-$(OBJ)/fechahistorica.o : $(SRC)/fechahistorica.cpp $(INC)/fechahistorica.h 
+$(OBJ)/fechahistorica.o : $(SRC)/fechahistorica.cpp $(INC)/fechahistorica.h $(INC)/lista.h
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/fechahistorica.o $(SRC)/fechahistorica.cpp
 
-$(OBJ)/lista.o : $(SRC)/lista.cpp $(INC)/lista.h $(INC)/fechahistorica.h
-	$(CXX) $(CPPFLAGS) -o $(OBJ)/lista.o $(SRC)/lista.cpp
+
 
 
 

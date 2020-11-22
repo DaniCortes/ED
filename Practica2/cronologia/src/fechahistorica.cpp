@@ -1,47 +1,88 @@
-#include <cstring>
-#include <iostream>
-#include <string>
-
 #include "fechahistorica.h"
 
 using namespace std;
 
 FechaHistorica::FechaHistorica() {
-   //To-do ...
+   anio = 0;
 }
 
 FechaHistorica::FechaHistorica(const FechaHistorica &f) {
-   //To-do ...
+   anio = f.anio;
+   eventos = f.eventos;
 }
 
-FechaHistorica &FechaHistorica::operator=(const FechaHistorica &f) {
-   //To-do ...
+FechaHistorica::FechaHistorica(const int anio, const Lista<string> eventos) {
+   this->anio = anio;
+   this->eventos = eventos;
 }
 
-// Implementar el resto de métodos ...
+FechaHistorica::~FechaHistorica() {}
 
-ostream &operator<<(std::ostream &os, const FechaHistorica &f) {
-   //Completar ...
+    void FechaHistorica::setAnio(int anio) {
+   this->anio = anio;
+}
+
+int FechaHistorica::getAnio() const {
+   return anio;
+}
+
+FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
+   anio = f.anio;
+   eventos = f.eventos;
+   return *this;
+}
+
+FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {
+   FechaHistorica tmp;
+   tmp.anio = f.anio;
+   tmp.eventos = eventos + f.eventos;
+   return tmp;
+}
+
+bool FechaHistorica::operator<(const FechaHistorica &f) const {
+   return (this->anio < f.anio) ? true : false;
+}
+
+bool FechaHistorica::operator>(const FechaHistorica &f) const {
+   return (this->anio > f.anio) ? true : false;
+}
+
+bool FechaHistorica::operator==(const FechaHistorica &f) const {
+   return (anio == f.anio && eventos == f.eventos) ? true : false;
+}
+
+bool FechaHistorica::operator!=(const FechaHistorica &f) const {
+   return !(*this == f);
+};
+
+ostream &operator<<(ostream &os, const FechaHistorica &f) {
+   os << "Año: " << f.anio;
+   
+   for (int i = 0; i < f.eventos.getNumDatos(); i++) {
+      os << "\n\t" << f.eventos.get(i);
+   }
+
+   
+   return os;
 }
 
 // Este método se proporciona a medio hacer para facilitar la lectura de una FechaHistorica a partir de un fichero
-istream &operator>>(std::istream &is, FechaHistorica &f) {
+istream &operator>>(istream &is, FechaHistorica &f) {
    string s;
 
    getline(is, s, '#');
 
    int anio = stoi(s);
    cout << "\tLeido año: " << anio << endl;
-   //To-do: guarda anio dentro del objeto f
+   f.anio = anio;
 
-   while (!is.eof()) {
-      s = "";
-      getline(is, s, '#');
+   s="";
+   while (getline(is, s, '#')) {
       cout << "\t\tLeido evento: " << s << endl;
-      //s contiene un string con el texto de un evento
-      //To-do: Guarda la cadena s dentro del objeto f
-      // ...
+      f.eventos.add(s);
+      s="";
    }
 
    return is;
 }
+

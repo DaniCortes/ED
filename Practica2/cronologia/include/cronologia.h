@@ -1,6 +1,9 @@
 #ifndef _CRONOLOGIA_H_
 #define _CRONOLOGIA_H_
 
+#include <iostream>
+#include <sstream>
+#include <string>
 #include "fechahistorica.h"
 #include "lista.h"
 
@@ -37,17 +40,40 @@ class Cronologia {
   */
    Cronologia &operator=(const Cronologia &c);
 
-   // Completar ...
-};
+   void insertar(const FechaHistorica &f);
 
-/**
-  * @brief Sobrecarga del operador <<
+   /**
+  * @brief Destructor
   */
-std::ostream &operator<<(std::ostream &flujo, const Cronologia &c);
+   ~Cronologia();
 
-/**
+   FechaHistorica ObtenerEventos(int anio);
+
+   Cronologia ObtenerEventos(int anioDesde, int anioHasta);
+
+   /**
+   * @brief Sobrecarga del operador ==
+   */
+   bool operator==(const Cronologia &c);
+
+   /**
+   * @brief Sobrecarga del operador !=
+   */
+   bool operator!=(const Cronologia &c);
+
+   /**
+   * @brief Sobrecarga del operador <<
+   */
+   friend std::ostream &operator<<(std::ostream &flujo, const Cronologia &c);
+
+   /**
   * @brief Sobrecarga del operador >>
   */
-std::istream &operator>>(std::istream &flujo, Cronologia &c);
+   friend std::istream &operator>>(std::istream &flujo, Cronologia &c);
+};
+
+
+
+
 
 #endif

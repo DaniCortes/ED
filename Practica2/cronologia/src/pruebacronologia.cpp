@@ -1,13 +1,12 @@
 #include <fstream>
 #include <iostream>
 #include "cronologia.h"
-#include "utiles.h"
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
-   if (argc != 2) {
-      cout << "Dime el nombre del fichero con la cronologia" << endl;
+   if (argc != 3) {
+      cout << "Dime los nombres de los ficheros con las cronologias" << endl;
       return 0;
    }
 
@@ -17,8 +16,15 @@ int main(int argc, char* argv[]) {
       return 0;
    }
 
-   Cronologia mi_cronologia;
-   f >> mi_cronologia;   //Cargamos en memoria la cronología.
+   ifstream g(argv[2]);
+   if (!f) {
+      cout << "No puedo abrir el fichero " << argv[1] << endl;
+      return 0;
+   }
+
+   Cronologia mi_cronologia1, mi_cronologia2;
+   f >> mi_cronologia1;   //Cargamos en memoria la cronología.
+   g >> mi_cronologia2;
 
    /* Exhibir aquí la funcionalidad programada para el TDA Cronologia / TDA FechaHistorica */
 
