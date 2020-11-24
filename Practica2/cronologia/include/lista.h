@@ -1,5 +1,5 @@
-#ifndef LISTA2
-#define LISTA2
+#ifndef _LISTA_H_
+#define _LISTA_H_
 
 #include <iostream>
 #include <string>
@@ -19,13 +19,13 @@
 template <class T>
 struct NodoLista {
    /**
-   * @page repConjunto Rep del TDA NodoLista
+   * @page repNodoLista Rep del TDA NodoLista
    *
-   * @section invConjunto Invariante de la representación
+   * @section invNodoLista Invariante de la representación
    *
    * El invariante es \e dato!=null
    *
-   * @section faConjunto Función de abstracción
+   * @section faNodoLista Función de abstracción
    *
    * Un objeto válido @e rep del TDA NodoLista representa un nodo
    * con un dato válido
@@ -64,13 +64,13 @@ template <class T>
 class Lista {
   private:
    /**
-   * @page repConjunto Rep del TDA Lista
+   * @page repLista Rep del TDA Lista
    *
-   * @section invConjunto Invariante de la representación
+   * @section invLista Invariante de la representación
    *
    * El invariante es \e num_datos>=0
    *
-   * @section faConjunto Función de abstracción
+   * @section faLista Función de abstracción
    *
    * Un objeto válido @e rep del TDA Racional representa a una
    * lista con nodos válidos

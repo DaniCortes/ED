@@ -20,16 +20,16 @@
 class FechaHistorica {
   private:
    /**
-   * @page repConjunto Rep del TDA FechaHistorica
+   * @page repFechaHistorica Rep del TDA FechaHistorica
    *
-   * @section invConjunto Invariante de la representación
+   * @section invFechaHistorica Invariante de la representación
    *
    * El invariante es \e num_datos>0
    *
-   * @section faConjunto Función de abstracción
+   * @section faFechaHistorica Función de abstracción
    *
    * Un objeto válido @e rep del TDA FechaHistorica representa una 
-   * fecha histórica con 
+   * fecha histórica con un evento o más
    *
    *
    */
@@ -112,8 +112,6 @@ class FechaHistorica {
    * @param fh @c FechaHistorica a comparar con el objeto implícito
    */
    bool operator!=(const FechaHistorica &f) const;
-
-   // Completar ...
 
    /**
    * @brief Sobrecarga del operador <<

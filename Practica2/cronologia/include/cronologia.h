@@ -22,13 +22,13 @@
 class Cronologia {
   private:
    /**
-   * @page repConjunto Rep del TDA Cronologia
+   * @page repCronologia Rep del TDA Cronologia
    *
-   * @section invConjunto Invariante de la representación
+   * @section invCronologia Invariante de la representación
    *
    * El invariante es \e num_datos>=0
    *
-   * @section faConjunto Función de abstracción
+   * @section faCronologia Función de abstracción
    *
    * Un objeto válido @e rep del TDA FechaHistorica representa una
    * cronología con fechas históricas válidas
