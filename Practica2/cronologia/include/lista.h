@@ -5,10 +5,14 @@
 #include <string>
 
 /**
- * @struct NodoLista
+ * @class NodoLista
  *
- * @brief Completar
- *
+ * @brief T.D.A. NodoLista
+ * 
+ * Una instancia @e nd del tipo de datos abstracto @c NodoLista es un
+ * objeto formado por un objeto de tipo @c T y la dirección al @c NodoLista
+ * siguiente
+ * 
  * @author Daniel Cortés
 */
 
@@ -19,27 +23,40 @@ struct NodoLista {
    *
    * @section invConjunto Invariante de la representación
    *
-   * El invariante es \e num_datos<0
+   * El invariante es \e dato!=null
    *
    * @section faConjunto Función de abstracción
    *
-   * Un objeto válido @e rep del TDA Racional representa al valor
+   * Un objeto válido @e rep del TDA NodoLista representa un nodo
+   * con un dato válido
    *
-   * (rep.num,rep.den)
    *
    */
    T dato;                    /**< Dato guardado en el nodo */
    NodoLista* siguiente;      /**< Dirección del siguiente nodo */
 
+   /**
+   * @brief Constructor por defecto
+   */
    NodoLista();
+
+   /**
+   * @brief Destructor
+   */
    ~NodoLista();
 };
 
 /**
  * @struct Lista
  *
- * @brief Completar
- *
+ * @brief T.D.A. Lista
+ * 
+ * Una instancia @e l del tipo de datos abstracto @c Lista es un
+ * objeto formado por un @c int que indica el número de datos, el
+ * @c NodoLista con el primer dato, el @c NodoLista con el último
+ * dato y un @c bool llamado init para controlar la inserción del 
+ * primer @c T dato
+ * 
  * @author Daniel Cortés
 */
 
@@ -51,13 +68,13 @@ class Lista {
    *
    * @section invConjunto Invariante de la representación
    *
-   * El invariante es \e num_datos<0
+   * El invariante es \e num_datos>=0
    *
    * @section faConjunto Función de abstracción
    *
-   * Un objeto válido @e rep del TDA Racional representa al valor
+   * Un objeto válido @e rep del TDA Racional representa a una
+   * lista con nodos válidos
    *
-   * (rep.num,rep.den)
    *
    */
 

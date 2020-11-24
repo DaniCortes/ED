@@ -19,8 +19,22 @@
 
 class FechaHistorica {
   private:
-   int anio;
-   Lista<std::string> eventos;
+   /**
+   * @page repConjunto Rep del TDA FechaHistorica
+   *
+   * @section invConjunto Invariante de la representación
+   *
+   * El invariante es \e num_datos>0
+   *
+   * @section faConjunto Función de abstracción
+   *
+   * Un objeto válido @e rep del TDA FechaHistorica representa una 
+   * fecha histórica con 
+   *
+   *
+   */
+   int anio;                     /**< Año en el que los eventos ocurrieron */
+   Lista<std::string> eventos;   /**< Lista de eventos */
 
   public:
    /**

@@ -21,7 +21,21 @@
 
 class Cronologia {
   private:
-   Lista<FechaHistorica> fechas_historicas; /** @c Lista de objetos tipo @c FechaHistorica */
+   /**
+   * @page repConjunto Rep del TDA Cronologia
+   *
+   * @section invConjunto Invariante de la representación
+   *
+   * El invariante es \e num_datos>=0
+   *
+   * @section faConjunto Función de abstracción
+   *
+   * Un objeto válido @e rep del TDA FechaHistorica representa una
+   * cronología con fechas históricas válidas
+   *
+   *
+   */
+   Lista<FechaHistorica> fechas_historicas; /**< Lista de objetos tipo FechaHistorica */
 
   public:
    /**
@@ -94,9 +108,6 @@ class Cronologia {
    */
    friend std::istream &operator>>(std::istream &is, Cronologia &c);
 };
-
-
-
 
 
 #endif

@@ -48,8 +48,6 @@ bool Cronologia::operator!=(const Cronologia& c) {
    return !(*this == c);
 }
 
-// Completar la implementación...
-
 ostream& operator<<(std::ostream& os, const Cronologia& c) {
 
    for (int i = 0; i < c.fechas_historicas.getNumDatos(); i++) {
