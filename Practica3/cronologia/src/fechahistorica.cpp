@@ -30,7 +30,6 @@ FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
    anio = f.anio;
    eventos = f.eventos;
    return *this;
-   pair<int, float> miPar(3, 4.5);
 }
 
 FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {

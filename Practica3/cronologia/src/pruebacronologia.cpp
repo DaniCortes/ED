@@ -31,7 +31,6 @@ int main(int argc, char* argv[]) {
 
   cout << mi_cronologia1;
 
-  pair<int, float> miPar(3, 4.5);
 
    /* Exhibir aquí la funcionalidad programada para el TDA Cronologia / TDA FechaHistorica */
 

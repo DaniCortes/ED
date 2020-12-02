@@ -5,7 +5,6 @@
 #include <sstream>
 #include <string>
 #include "fechahistorica.h"
-#include "lista.h"
 
 /**
  * @class Cronologia
