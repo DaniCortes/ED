@@ -1,55 +1,60 @@
-#include "fechahistorica.h"
+#include "fechahistorica_stl.h"
 
 using namespace std;
 
 FechaHistorica::FechaHistorica() {
-   anio = 0;
+   fecha.first = 0;
 }
 
 FechaHistorica::FechaHistorica(const FechaHistorica &f) {
-   anio = f.anio;
-   eventos = f.eventos;
+   fecha.first = f.fecha.first;
+   fecha.second = f.fecha.second;
 }
 
-FechaHistorica::FechaHistorica(const int anio, const Lista<string> eventos) {
-   this->anio = anio;
-   this->eventos = eventos;
+FechaHistorica::FechaHistorica(const int anio, const set<string> &eventos) {
+   fecha.first = anio;
+   fecha.second = eventos;
 }
 
-FechaHistorica::~FechaHistorica() {}
+FechaHistorica::~FechaHistorica() {
+   fecha.second.clear();
+}
 
-    void FechaHistorica::setAnio(int anio) {
-   this->anio = anio;
+void FechaHistorica::setAnio(int anio) {
+   fecha.first = anio;
 }
 
 int FechaHistorica::getAnio() const {
-   return anio;
+   return fecha.first;
 }
 
 FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
-   anio = f.anio;
-   eventos = f.eventos;
+   fecha.first = f.fecha.first;
+   fecha.second = f.fecha.second;
    return *this;
 }
 
 FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {
    FechaHistorica tmp = *this;
-   if (anio == f.anio){
-      tmp.eventos += f.eventos;
+   if (fecha.first == f.fecha.first){
+      set<string>::iterator i;
+      for (i = f.fecha.second.begin(); i != f.fecha.second.end(); i++){
+         tmp.fecha.second.insert(*i);
+      }
    }
    return tmp;
 }
 
 bool FechaHistorica::operator<(const FechaHistorica &f) const {
-   return (this->anio < f.anio) ? true : false;
+   return (fecha.first < f.fecha.first) ? true : false;
 }
 
 bool FechaHistorica::operator>(const FechaHistorica &f) const {
-   return (this->anio > f.anio) ? true : false;
+   return (fecha.first > f.fecha.first) ? true : false;
 }
 
 bool FechaHistorica::operator==(const FechaHistorica &f) const {
-   return (anio == f.anio && eventos == f.eventos) ? true : false;
+   return (fecha.first == f.fecha.first && fecha.second == f.fecha.second) ? true : false;
 }
 
 bool FechaHistorica::operator!=(const FechaHistorica &f) const {

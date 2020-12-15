@@ -1,10 +1,9 @@
-#ifndef _FECHAHISTORICA_H_
-#define _FECHAHISTORICA_H_
+#ifndef _FECHAHISTORICA_STL_H_
+#define _FECHAHISTORICA_STL_H_
 
 #include <iostream>
-#include <string>
 #include <set>
-#include "lista.h"
+#include <string>
 
 /**
  * @class FechaHistorica
@@ -34,10 +33,10 @@ class FechaHistorica {
    *
    *
    */
-   set<string> eventos;
-   std::pair<int, float> fecha;
+ /**< Lista de eventos */
+   std::pair<int, std::set<std::string>> fecha;
    /**< Año en el que los eventos ocurrieron */
-   Lista<std::string> eventos;   /**< Lista de eventos */
+   
 
   public:
    /**
@@ -59,7 +58,7 @@ class FechaHistorica {
    * 
    * @param eventos @c Lista de eventos ocurridos en ese año
    */
-   FechaHistorica(const int anio, const Lista<std::string> eventos);
+   FechaHistorica(const int anio, const std::set<std::string> &eventos);
 
    /**
    * @brief Destructor
@@ -83,7 +82,7 @@ class FechaHistorica {
    * 
    * @param fh @c FechaHistorica usada para asignar el objeto implícito
    */
-   FechaHistorica& operator=(const FechaHistorica &f);
+   FechaHistorica &operator=(const FechaHistorica &f);
 
    /**
    * @brief Sobrecarga del operador +
@@ -135,9 +134,5 @@ class FechaHistorica {
 
    friend class Cronologia;
 };
-
-
-
-
 
 #endif

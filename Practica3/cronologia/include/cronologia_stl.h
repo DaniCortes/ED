@@ -1,10 +1,10 @@
-#ifndef _CRONOLOGIA_H_
-#define _CRONOLOGIA_H_
+#ifndef _CRONOLOGIA_STL_H_
+#define _CRONOLOGIA_STL_H_
 
 #include <iostream>
 #include <sstream>
+#include <map>
 #include <string>
-#include "fechahistorica.h"
 
 /**
  * @class Cronologia
@@ -16,7 +16,6 @@
  *
  * @author Daniel Cortés
 */
-
 
 class Cronologia {
   private:
@@ -107,6 +106,5 @@ class Cronologia {
    */
    friend std::istream &operator>>(std::istream &is, Cronologia &c);
 };
-
 
 #endif

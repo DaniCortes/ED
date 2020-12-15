@@ -28,10 +28,10 @@ $(BIN)/pruebafechahistorica: $(OBJ)/pruebafechahistorica.o $(OBJ)/fechahistorica
 $(OBJ)/pruebafechahistorica.o : $(SRC)/pruebafechahistorica.cpp 
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/pruebafechahistorica.o $(SRC)/pruebafechahistorica.cpp
 
-$(OBJ)/cronologia.o : $(SRC)/cronologia.cpp $(INC)/cronologia.h
+$(OBJ)/cronologia.o : $(SRC)/cronologia.cpp $(INC)/cronologia_stl.h
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/cronologia.o $(SRC)/cronologia.cpp
 
-$(OBJ)/fechahistorica.o : $(SRC)/fechahistorica.cpp $(INC)/fechahistorica.h 
+$(OBJ)/fechahistorica.o : $(SRC)/fechahistorica.cpp $(INC)/fechahistorica_stl.h 
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/fechahistorica.o $(SRC)/fechahistorica.cpp
 
 
