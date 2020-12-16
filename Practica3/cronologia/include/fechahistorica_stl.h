@@ -33,12 +33,14 @@ class FechaHistorica {
    *
    *
    */
- /**< Lista de eventos */
-   std::pair<int, std::set<std::string>> fecha;
-   /**< Año en el que los eventos ocurrieron */
+   std::pair<int, std::set<std::string>> fecha; /**< Par que contiene el año y un set con los eventos */
    
 
   public:
+
+   typedef std::set<std::string>::iterator iterator;
+   typedef typename std::set<std::string>::const_iterator const_iterator;
+
    /**
    * @brief Constructor por defecto
    */
@@ -76,6 +78,18 @@ class FechaHistorica {
    * @brief Consultor del año
    */
    int getAnio() const;
+
+   int getNumEventos() const;
+
+   FechaHistorica getEventosPalabraClave(std::string palabra_clave);
+
+   iterator begin();
+
+   iterator end();
+
+   const_iterator begin() const;
+
+   const_iterator end() const;
 
    /**
    * @brief Sobrecarga del operador =

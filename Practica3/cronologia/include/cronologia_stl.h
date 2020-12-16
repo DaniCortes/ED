@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <map>
+#include "fechahistorica_stl.h"
 #include <string>
 
 /**
@@ -33,9 +34,12 @@ class Cronologia {
    *
    *
    */
-   Lista<FechaHistorica> fechas_historicas; /**< Lista de objetos tipo FechaHistorica */
+   std::map<int, FechaHistorica> fechas_historicas; /**< Map de objetos tipo FechaHistorica */
 
   public:
+
+  typedef typename std::map<int, FechaHistorica>::iterator iterator;
+  typedef typename std::map<int, FechaHistorica>::const_iterator const_iterator;
    /**
    * @brief Constructor por defecto
    */
@@ -76,11 +80,32 @@ class Cronologia {
    Cronologia ObtenerEventos(int anioDesde, int anioHasta);
 
    /**
+    * @brief Método que obtiene el número máximo de eventos que 
+    * 
+    * 
+    * 
+    */
+
+   int getMaxEventosEnAnio(int &anio) const;
+
+   float getPromedioEventos() const;
+
+   Cronologia getFechasPalabraClave(std::string palabra_clave);
+
+   iterator begin();
+
+   iterator end();
+
+   const_iterator begin() const;
+
+   const_iterator end() const;
+
+   /**
    * @brief Sobrecarga del operador ==
    * 
    * @param c @c Cronologia a comparar con el objeto implícito
    */
-   bool operator==(const Cronologia &c);
+   bool operator==(const Cronologia &c) const;
 
    /**
    * @brief Sobrecarga del operador !=
@@ -88,7 +113,7 @@ class Cronologia {
    * @param c @c Cronologia a comparar con el objeto implícito
    * 
    */
-   bool operator!=(const Cronologia &c);
+   bool operator!=(const Cronologia &c) const;
 
    /**
    * @brief Sobrecarga del operador <<

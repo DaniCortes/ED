@@ -28,6 +28,38 @@ int FechaHistorica::getAnio() const {
    return fecha.first;
 }
 
+int FechaHistorica::getNumEventos() const {
+   return fecha.second.size();
+}
+
+FechaHistorica FechaHistorica::getEventosPalabraClave(string palabra_clave) {
+   FechaHistorica tmp;
+   tmp.fecha.first = fecha.first;
+   FechaHistorica::iterator it;
+   for(string aux: fecha.second) {
+      if (aux.find(palabra_clave) != string::npos) {
+         tmp.fecha.second.insert(aux);
+      }
+   } 
+   return tmp;
+}
+
+FechaHistorica::iterator FechaHistorica::begin() {
+   return fecha.second.begin();
+}
+
+FechaHistorica::iterator FechaHistorica::end() {
+   return fecha.second.end(); 
+}
+
+FechaHistorica::const_iterator FechaHistorica::begin() const {
+   return fecha.second.begin();
+}
+
+FechaHistorica::const_iterator FechaHistorica::end() const {
+   return fecha.second.end();
+}
+
 FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
    fecha.first = f.fecha.first;
    fecha.second = f.fecha.second;
@@ -37,9 +69,8 @@ FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
 FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {
    FechaHistorica tmp = *this;
    if (fecha.first == f.fecha.first){
-      set<string>::iterator i;
-      for (i = f.fecha.second.begin(); i != f.fecha.second.end(); i++){
-         tmp.fecha.second.insert(*i);
+      for (string evento: f.fecha.second){
+         tmp.fecha.second.insert(evento);
       }
    }
    return tmp;
@@ -62,10 +93,10 @@ bool FechaHistorica::operator!=(const FechaHistorica &f) const {
 };
 
 ostream &operator<<(ostream &os, const FechaHistorica &f) {
-   os << "Año: " << f.anio << endl;
-   
-   for (int i = 0; i < f.eventos.getNumDatos(); i++) {
-      os << "\t Evento " << i << ": " << f.eventos.get(i) << endl;
+   os << "Año: " << f.fecha.first << endl;
+   int i = 0;
+   for(string evento: f.fecha.second) {
+      os << "\t Evento " << ++i << ": " << evento << endl;
    }
 
    os << endl;
@@ -81,12 +112,12 @@ istream &operator>>(istream &is, FechaHistorica &f) {
 
    int anio = stoi(s);
    cout << "\tLeido año: " << anio << endl;
-   f.anio = anio;
+   f.fecha.first = anio;
 
    s="";
    while (getline(is, s, '#')) {
       cout << "\t\tLeido evento: " << s << endl;
-      f.eventos.add(s);
+      f.fecha.second.insert(s);
       s="";
    }
 

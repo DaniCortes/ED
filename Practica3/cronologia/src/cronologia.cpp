@@ -16,42 +16,94 @@ Cronologia& Cronologia::operator=(const Cronologia& c) {
 }
 
 FechaHistorica Cronologia::ObtenerEventos(int anio) {
-   int i = 0;
    FechaHistorica tmp;
-   while ((tmp = fechas_historicas.get(i)).anio <= anio) {
-      if (tmp.anio == anio) {
-         return tmp;
-      }
-      i++;
+   Cronologia::iterator it = fechas_historicas.find(anio);
+   if (it != end() && it->first == anio) {
+      tmp = it->second;
+      return tmp;
    }
-   tmp.anio = anio;
-   tmp.eventos.add("No hay ningún evento");
+   tmp.fecha.first = anio;
+   tmp.fecha.second.insert("No hay ningún evento");
    return tmp;
 }
 
 Cronologia Cronologia::ObtenerEventos(int anioDesde, int anioHasta) {
    int i = 0;
    Cronologia cr_tmp;
-   while(fechas_historicas.get(i).anio < anioDesde) i++;
-   while((fechas_historicas.get(i).anio >= anioDesde) && (fechas_historicas.get(i).anio <= anioHasta)) {
-      cr_tmp.fechas_historicas.add(fechas_historicas.get(i));
-      i++;
+
+   Cronologia::iterator it = fechas_historicas.find(anioDesde);
+   if (it == end()) {
+      it = fechas_historicas.upper_bound(anioDesde);
+   }
+   for (it; it != fechas_historicas.upper_bound(anioHasta); it++) {
+      cr_tmp.fechas_historicas.insert({it->first, it->second});
+   }
+
+   return cr_tmp;
+}
+
+int Cronologia::getMaxEventosEnAnio(int &anio) const {
+   int max = begin()->second.getNumEventos();
+   anio = begin()->first;
+   int numEventos;
+   for (pair<int, FechaHistorica> aux: fechas_historicas) {
+      if (numEventos = aux.second.getNumEventos() > max) {
+         max = numEventos;
+         anio = aux.first;
+      }
+   }
+   return max;
+}
+
+float Cronologia::getPromedioEventos() const {
+   int total = 0;
+   for (pair<int, FechaHistorica> aux : fechas_historicas) {
+      total += aux.second.getNumEventos();
+   }
+   return (float(total) / float(fechas_historicas.size()));
+}
+
+Cronologia Cronologia::getFechasPalabraClave(string palabra_clave) {
+   Cronologia cr_tmp;
+   FechaHistorica fh_tmp;
+   for (pair<int, FechaHistorica> aux: fechas_historicas) {
+      fh_tmp = aux.second.getEventosPalabraClave(palabra_clave);
+      if (fh_tmp.fecha.second.size() != 0) {
+         cr_tmp.fechas_historicas.insert({aux.first, fh_tmp});
+      }
    }
    return cr_tmp;
 }
 
-bool Cronologia::operator==(const Cronologia& c) {
+Cronologia::iterator Cronologia::begin() {
+   return fechas_historicas.begin();
+}
+
+Cronologia::iterator Cronologia::end() {
+   return fechas_historicas.end();
+}
+
+Cronologia::const_iterator Cronologia::begin() const {
+   return fechas_historicas.begin();
+}
+
+Cronologia::const_iterator Cronologia::end() const {
+   return fechas_historicas.end();
+}
+
+bool Cronologia::operator==(const Cronologia& c) const {
    return (fechas_historicas == c.fechas_historicas) ? true : false;
 }
 
-bool Cronologia::operator!=(const Cronologia& c) {
+bool Cronologia::operator!=(const Cronologia& c) const {
    return !(*this == c);
 }
 
 ostream& operator<<(std::ostream& os, const Cronologia& c) {
+FechaHistorica a = c.fechas_historicas.at(1);
 
-   for (int i = 0; i < c.fechas_historicas.getNumDatos(); i++) {
-      os << c.fechas_historicas.get(i);
+   for (pair <int, FechaHistorica> fecha: c.fechas_historicas) {
+      os << fecha.second;
    }
    return os;
 }
@@ -67,10 +119,12 @@ istream& operator>>(istream& is, Cronologia& c) {
 
    while (getline(is, s)) {
       istringstream ss(s);
-      FechaHistorica aux;
+      FechaHistorica fh_aux;
+      int int_aux;
       cout << "Leyendo FechaHistorica número: " << fh_leidas << endl;
-      ss >> aux;
-      c.fechas_historicas.add(aux);
+      ss >> fh_aux;
+      int_aux = fh_aux.getAnio();
+      c.fechas_historicas.insert({int_aux, fh_aux});
       fh_leidas++;
    }
 
