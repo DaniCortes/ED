@@ -1,12 +1,23 @@
 var classFechaHistorica =
 [
+    [ "const_iterator", "classFechaHistorica.html#ac97844c21df098610cb1c4b02c1bf375", null ],
+    [ "iterator", "classFechaHistorica.html#a10eb2e4c7e1b6f82fe8000d8cf480071", null ],
     [ "FechaHistorica", "classFechaHistorica.html#a35baa09e365240e567049a7e33a7c209", null ],
     [ "FechaHistorica", "classFechaHistorica.html#a40a9c133a139d41bf84406e09022feaf", null ],
-    [ "FechaHistorica", "classFechaHistorica.html#a0118bae20041705eb98444346dc5a95a", null ],
+    [ "FechaHistorica", "classFechaHistorica.html#ae2bb9bc7414bf150142002109c6b9dd9", null ],
     [ "~FechaHistorica", "classFechaHistorica.html#a634de6e216261ee47721922692d2934f", null ],
+    [ "begin", "classFechaHistorica.html#a9e73edf9052e774fd30466be6fc8f385", null ],
+    [ "begin", "classFechaHistorica.html#a60628f8988eee334dd731206c3133f9f", null ],
+    [ "empty", "classFechaHistorica.html#a0a3b1eaf7c47264c789e75a56580b77c", null ],
+    [ "end", "classFechaHistorica.html#a40a6eb7654e40697dbd647e86fe3e6b2", null ],
+    [ "end", "classFechaHistorica.html#ab0bc047c3dff7a316e8f39233982a2cd", null ],
     [ "getAnio", "classFechaHistorica.html#ad4f18ae887d020e9fc8132de8514f7ec", null ],
+    [ "getEventosPalabraClave", "classFechaHistorica.html#ae9cbe28600ee5ee5d491adf8e3a0cf9a", null ],
+    [ "getNumEventos", "classFechaHistorica.html#abb5f20ca7f389b5f6932c238daca47d1", null ],
+    [ "insert", "classFechaHistorica.html#a7d199f34045958a4bcdf59da0318c08e", null ],
     [ "operator!=", "classFechaHistorica.html#a018f09ff468187befeb51ecc24672263", null ],
-    [ "operator+", "classFechaHistorica.html#ab347a73527ad931f66fc1bb14dcf0de3", null ],
+    [ "operator+", "classFechaHistorica.html#a63aca9a96c1cf7711d158c4074cde13b", null ],
+    [ "operator+=", "classFechaHistorica.html#ac9a7293983821591cee0abadb4d5ee5a", null ],
     [ "operator<", "classFechaHistorica.html#a34d4faaf4cd94b73f3204a9c21477705", null ],
     [ "operator=", "classFechaHistorica.html#a4e6922a922949ad3395c20df452fbff7", null ],
     [ "operator==", "classFechaHistorica.html#a983e266a3187dce82dda3a8eec2818c8", null ],
@@ -15,6 +26,5 @@ var classFechaHistorica =
     [ "Cronologia", "classFechaHistorica.html#a093d6c964b7fcfece8a1bef43b5bc9ad", null ],
     [ "operator<<", "classFechaHistorica.html#aecbf8af67ff4d824ccf2fd4295e024c3", null ],
     [ "operator>>", "classFechaHistorica.html#a50236a7f808ec456008d15f34c98c01f", null ],
-    [ "anio", "classFechaHistorica.html#ade873215978862ec3ca4fcaa1fd33a07", null ],
-    [ "eventos", "classFechaHistorica.html#a9a0605f9e274533a606dd0f33f599240", null ]
+    [ "fecha", "classFechaHistorica.html#a77bdc9adff2da79828a688fa5434ed82", null ]
 ];

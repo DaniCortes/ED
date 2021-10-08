@@ -6,7 +6,7 @@ CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c
 
 
-all: $(BIN)/pruebacronologia $(BIN)/pruebafechahistorica
+all: $(BIN)/union_cronologias $(BIN)/filtradoPalabraClave $(BIN)/filtradoIntervalo $(BIN)/estadisticaEventos
 
 # ************ Generación de documentación ******************
 documentacion:
@@ -16,17 +16,29 @@ documentacion:
 # ************ Compilación de módulos ************
 # Nota: Esto es solo una posible forma de compilar este proyecto. Modificar según sea necesario.
 
-$(BIN)/pruebacronologia: $(OBJ)/pruebacronologia.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
-	$(CXX) -o $(BIN)/pruebacronologia $(OBJ)/pruebacronologia.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+$(BIN)/estadisticaEventos: $(OBJ)/estadisticaEventos.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+	$(CXX) -o $(BIN)/estadisticaEventos $(OBJ)/estadisticaEventos.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
 
-$(OBJ)/pruebacronologia.o : $(SRC)/pruebacronologia.cpp 
-	$(CXX) $(CPPFLAGS) -o $(OBJ)/pruebacronologia.o $(SRC)/pruebacronologia.cpp
+$(OBJ)/estadisticaEventos.o : $(SRC)/estadisticaEventos.cpp 
+	$(CXX) $(CPPFLAGS) -o $(OBJ)/estadisticaEventos.o $(SRC)/estadisticaEventos.cpp
 
-$(BIN)/pruebafechahistorica: $(OBJ)/pruebafechahistorica.o $(OBJ)/fechahistorica.o
-	$(CXX) -o $(BIN)/pruebafechahistorica $(OBJ)/pruebafechahistorica.o $(OBJ)/fechahistorica.o
+$(BIN)/union_cronologias: $(OBJ)/union_cronologias.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+	$(CXX) -o $(BIN)/union_cronologias $(OBJ)/union_cronologias.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
 
-$(OBJ)/pruebafechahistorica.o : $(SRC)/pruebafechahistorica.cpp 
-	$(CXX) $(CPPFLAGS) -o $(OBJ)/pruebafechahistorica.o $(SRC)/pruebafechahistorica.cpp
+$(OBJ)/union_cronologias.o : $(SRC)/union_cronologias.cpp 
+	$(CXX) $(CPPFLAGS) -o $(OBJ)/union_cronologias.o $(SRC)/union_cronologias.cpp
+
+$(BIN)/filtradoIntervalo: $(OBJ)/filtradoIntervalo.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+	$(CXX) -o $(BIN)/filtradoIntervalo $(OBJ)/filtradoIntervalo.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+
+$(OBJ)/filtradoIntervalo.o : $(SRC)/filtradoIntervalo.cpp 
+	$(CXX) $(CPPFLAGS) -o $(OBJ)/filtradoIntervalo.o $(SRC)/filtradoIntervalo.cpp
+
+$(BIN)/filtradoPalabraClave: $(OBJ)/filtradoPalabraClave.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+	$(CXX) -o $(BIN)/filtradoPalabraClave $(OBJ)/filtradoPalabraClave.o $(OBJ)/cronologia.o $(OBJ)/fechahistorica.o
+
+$(OBJ)/filtradoPalabraClave.o : $(SRC)/filtradoPalabraClave.cpp 
+	$(CXX) $(CPPFLAGS) -o $(OBJ)/filtradoPalabraClave.o $(SRC)/filtradoPalabraClave.cpp
 
 $(OBJ)/cronologia.o : $(SRC)/cronologia.cpp $(INC)/cronologia_stl.h
 	$(CXX) $(CPPFLAGS) -o $(OBJ)/cronologia.o $(SRC)/cronologia.cpp

@@ -59,6 +59,7 @@ $(document).ready(function(){initNavTree('classCronologia.html',''); initResizab
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Tipos públicos</a> &#124;
 <a href="#pub-methods">Métodos públicos</a> &#124;
 <a href="#pri-attribs">Atributos privados</a> &#124;
 <a href="#friends">Amigas</a> &#124;
@@ -71,8 +72,17 @@ $(document).ready(function(){initNavTree('classCronologia.html',''); initResizab
 <p>T.D.A. <a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a>.  
  <a href="classCronologia.html#details">Más...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cronologia_8h_source.html">cronologia.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="cronologia__stl_8h_source.html">cronologia_stl.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos públicos</h2></td></tr>
+<tr class="memitem:a6041c6cf6185127096c7c8d94219d9fd"><td class="memItemLeft" align="right" valign="top"><a id="a6041c6cf6185127096c7c8d94219d9fd"></a>
+typedef std::map&lt; int, <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b></td></tr>
+<tr class="separator:a6041c6cf6185127096c7c8d94219d9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b43de24e234835682e8ee37ccade0b"><td class="memItemLeft" align="right" valign="top"><a id="a26b43de24e234835682e8ee37ccade0b"></a>
+typedef std::map&lt; int, <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
+<tr class="separator:a26b43de24e234835682e8ee37ccade0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:ac0026b1919148f6cd6cf4ca4c357771e"><td class="memItemLeft" align="right" valign="top"><a id="ac0026b1919148f6cd6cf4ca4c357771e"></a>
@@ -95,17 +105,61 @@ Métodos públicos</h2></td></tr>
 <tr class="memitem:a308f943882094a91ae785ce92dc45fea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCronologia.html">Cronologia</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a308f943882094a91ae785ce92dc45fea">ObtenerEventos</a> (int anioDesde, int anioHasta)</td></tr>
 <tr class="memdesc:a308f943882094a91ae785ce92dc45fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que obtiene los eventos ocurridos entre dos años, ambos incluídos.  <a href="classCronologia.html#a308f943882094a91ae785ce92dc45fea">Más...</a><br /></td></tr>
 <tr class="separator:a308f943882094a91ae785ce92dc45fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0912ed9512d7a3ad8fb63ec6acc248d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a0912ed9512d7a3ad8fb63ec6acc248d5">operator==</a> (const <a class="el" href="classCronologia.html">Cronologia</a> &amp;c)</td></tr>
-<tr class="memdesc:a0912ed9512d7a3ad8fb63ec6acc248d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga del operador ==.  <a href="classCronologia.html#a0912ed9512d7a3ad8fb63ec6acc248d5">Más...</a><br /></td></tr>
-<tr class="separator:a0912ed9512d7a3ad8fb63ec6acc248d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0279f2e6294c330c0bcd79e37130cf68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a0279f2e6294c330c0bcd79e37130cf68">operator!=</a> (const <a class="el" href="classCronologia.html">Cronologia</a> &amp;c)</td></tr>
-<tr class="memdesc:a0279f2e6294c330c0bcd79e37130cf68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga del operador !=.  <a href="classCronologia.html#a0279f2e6294c330c0bcd79e37130cf68">Más...</a><br /></td></tr>
-<tr class="separator:a0279f2e6294c330c0bcd79e37130cf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a19c86a063a8ea759496c465be6267d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a1a19c86a063a8ea759496c465be6267d">getMaxEventosEnFechaHistorica</a> (int &amp;anio) const</td></tr>
+<tr class="memdesc:a1a19c86a063a8ea759496c465be6267d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que obtiene el número máximo de eventos guardados en una <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code>.  <a href="classCronologia.html#a1a19c86a063a8ea759496c465be6267d">Más...</a><br /></td></tr>
+<tr class="separator:a1a19c86a063a8ea759496c465be6267d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10173da4fe8ce6a95a6125f0a553767d"><td class="memItemLeft" align="right" valign="top"><a id="a10173da4fe8ce6a95a6125f0a553767d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a10173da4fe8ce6a95a6125f0a553767d">getTotalEventos</a> () const</td></tr>
+<tr class="memdesc:a10173da4fe8ce6a95a6125f0a553767d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultor del número total de eventos guardados. <br /></td></tr>
+<tr class="separator:a10173da4fe8ce6a95a6125f0a553767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289ad0396f67f17a311970bbd5d6aba2"><td class="memItemLeft" align="right" valign="top"><a id="a289ad0396f67f17a311970bbd5d6aba2"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a289ad0396f67f17a311970bbd5d6aba2">size</a> () const</td></tr>
+<tr class="memdesc:a289ad0396f67f17a311970bbd5d6aba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultor del número de objetos <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> almacenados. <br /></td></tr>
+<tr class="separator:a289ad0396f67f17a311970bbd5d6aba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c3682470ab0e0773c003590b7f1b990"><td class="memItemLeft" align="right" valign="top"><a id="a6c3682470ab0e0773c003590b7f1b990"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a6c3682470ab0e0773c003590b7f1b990">getPromedioEventos</a> () const</td></tr>
+<tr class="memdesc:a6c3682470ab0e0773c003590b7f1b990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que obtiene el número promedio de eventos por año. <br /></td></tr>
+<tr class="separator:a6c3682470ab0e0773c003590b7f1b990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868ed0ac4e029a357f1b4ff2c4ff0cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCronologia.html">Cronologia</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a868ed0ac4e029a357f1b4ff2c4ff0cd6">getFechasPalabraClave</a> (std::string palabra_clave)</td></tr>
+<tr class="memdesc:a868ed0ac4e029a357f1b4ff2c4ff0cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que obtiene los eventos que contengan una palabra clave.  <a href="classCronologia.html#a868ed0ac4e029a357f1b4ff2c4ff0cd6">Más...</a><br /></td></tr>
+<tr class="separator:a868ed0ac4e029a357f1b4ff2c4ff0cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee920b0ed7aff63cc14fad990c85595"><td class="memItemLeft" align="right" valign="top"><a id="afee920b0ed7aff63cc14fad990c85595"></a>
+iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#afee920b0ed7aff63cc14fad990c85595">begin</a> ()</td></tr>
+<tr class="memdesc:afee920b0ed7aff63cc14fad990c85595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve un iterador apuntando al inicio de la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code>. <br /></td></tr>
+<tr class="separator:afee920b0ed7aff63cc14fad990c85595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa08dc5a9a3812911dabdf7599222e85"><td class="memItemLeft" align="right" valign="top"><a id="afa08dc5a9a3812911dabdf7599222e85"></a>
+iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#afa08dc5a9a3812911dabdf7599222e85">end</a> ()</td></tr>
+<tr class="memdesc:afa08dc5a9a3812911dabdf7599222e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve un iterador apuntando al final de la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code>. <br /></td></tr>
+<tr class="separator:afa08dc5a9a3812911dabdf7599222e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876db65000bccd70a2dedb52a0fbfd2e"><td class="memItemLeft" align="right" valign="top"><a id="a876db65000bccd70a2dedb52a0fbfd2e"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a876db65000bccd70a2dedb52a0fbfd2e">begin</a> () const</td></tr>
+<tr class="memdesc:a876db65000bccd70a2dedb52a0fbfd2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve un iterador constante apuntando al inicio de la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code>. <br /></td></tr>
+<tr class="separator:a876db65000bccd70a2dedb52a0fbfd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99338971de24416107afaa1d52ec545"><td class="memItemLeft" align="right" valign="top"><a id="ab99338971de24416107afaa1d52ec545"></a>
+const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#ab99338971de24416107afaa1d52ec545">end</a> () const</td></tr>
+<tr class="memdesc:ab99338971de24416107afaa1d52ec545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve un iterador constante apuntando al final de la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code>. <br /></td></tr>
+<tr class="separator:ab99338971de24416107afaa1d52ec545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3c8abb331126ffdfd439e073f160af"><td class="memItemLeft" align="right" valign="top">std::pair&lt; Cronologia::iterator, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a4f3c8abb331126ffdfd439e073f160af">insert</a> (const <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &amp;fh)</td></tr>
+<tr class="memdesc:a4f3c8abb331126ffdfd439e073f160af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para insertar una <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code>.  <a href="classCronologia.html#a4f3c8abb331126ffdfd439e073f160af">Más...</a><br /></td></tr>
+<tr class="separator:a4f3c8abb331126ffdfd439e073f160af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef1b616209fecb25db2e161f8e4da95"><td class="memItemLeft" align="right" valign="top"><a id="a0ef1b616209fecb25db2e161f8e4da95"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a0ef1b616209fecb25db2e161f8e4da95">empty</a> () const</td></tr>
+<tr class="memdesc:a0ef1b616209fecb25db2e161f8e4da95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que comprueba si la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> está vacía o no. <br /></td></tr>
+<tr class="separator:a0ef1b616209fecb25db2e161f8e4da95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70a0d10d6a808310c187bb861fb562d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCronologia.html">Cronologia</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#ae70a0d10d6a808310c187bb861fb562d">operator+</a> (const <a class="el" href="classCronologia.html">Cronologia</a> &amp;c) const</td></tr>
+<tr class="memdesc:ae70a0d10d6a808310c187bb861fb562d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga del operador +.  <a href="classCronologia.html#ae70a0d10d6a808310c187bb861fb562d">Más...</a><br /></td></tr>
+<tr class="separator:ae70a0d10d6a808310c187bb861fb562d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d69c3a82b267660f011e633e5f4ef5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a36d69c3a82b267660f011e633e5f4ef5">operator==</a> (const <a class="el" href="classCronologia.html">Cronologia</a> &amp;c) const</td></tr>
+<tr class="memdesc:a36d69c3a82b267660f011e633e5f4ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga del operador ==.  <a href="classCronologia.html#a36d69c3a82b267660f011e633e5f4ef5">Más...</a><br /></td></tr>
+<tr class="separator:a36d69c3a82b267660f011e633e5f4ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0628d57993fa3a9d9d6a8e5f2656a59"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#aa0628d57993fa3a9d9d6a8e5f2656a59">operator!=</a> (const <a class="el" href="classCronologia.html">Cronologia</a> &amp;c) const</td></tr>
+<tr class="memdesc:aa0628d57993fa3a9d9d6a8e5f2656a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga del operador !=.  <a href="classCronologia.html#aa0628d57993fa3a9d9d6a8e5f2656a59">Más...</a><br /></td></tr>
+<tr class="separator:aa0628d57993fa3a9d9d6a8e5f2656a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos privados</h2></td></tr>
-<tr class="memitem:a4e727365450190e258032ce56e168342"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLista.html">Lista</a>&lt; <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a4e727365450190e258032ce56e168342">fechas_historicas</a></td></tr>
-<tr class="separator:a4e727365450190e258032ce56e168342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00325466e09605fce32c137368f64ec5"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCronologia.html#a00325466e09605fce32c137368f64ec5">fechas_historicas</a></td></tr>
+<tr class="separator:a00325466e09605fce32c137368f64ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Amigas</h2></td></tr>
@@ -118,10 +172,10 @@ Amigas</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>T.D.A. <a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a>. </p>
-<p>Una instancia <em>c</em> del tipo de datos abstracto <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> es un objeto formado por una <code><a class="el" href="classLista.html" title="T.D.A. Lista.">Lista</a></code> de objetos de tipo <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> </p>
+<p>Una instancia <em>c</em> del tipo de datos abstracto <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> es un objeto formado por un <code>map</code> de objetos de tipo <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> con claves <code>int</code> que son el año de dichos objetos <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> </p>
 <dl class="section author"><dt>Autor</dt><dd>Daniel Cortés </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cronologia_8h_source.html#l00022">22</a> del archivo <a class="el" href="cronologia_8h_source.html">cronologia.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="cronologia__stl_8h_source.html#l00022">22</a> del archivo <a class="el" href="cronologia__stl_8h_source.html">cronologia_stl.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="a35694d459c7f2bc902b8db6abf13662d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35694d459c7f2bc902b8db6abf13662d">&#9670;&nbsp;</a></span>Cronologia()</h2>
@@ -150,6 +204,85 @@ Amigas</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a868ed0ac4e029a357f1b4ff2c4ff0cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868ed0ac4e029a357f1b4ff2c4ff0cd6">&#9670;&nbsp;</a></span>getFechasPalabraClave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCronologia.html">Cronologia</a> Cronologia::getFechasPalabraClave </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>palabra_clave</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que obtiene los eventos que contengan una palabra clave. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">palabra_clave</td><td>palabra que se está buscando en la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto de clase <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> con los eventos que contengan dicha palabra clave, ordenados por año </dd></dl>
+
+</div>
+</div>
+<a id="a1a19c86a063a8ea759496c465be6267d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a19c86a063a8ea759496c465be6267d">&#9670;&nbsp;</a></span>getMaxEventosEnFechaHistorica()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cronologia::getMaxEventosEnFechaHistorica </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>anio</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que obtiene el número máximo de eventos guardados en una <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">anio</td><td>variable pasada por referencia para conseguir el año en el que está el máximo de eventos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4f3c8abb331126ffdfd439e073f160af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3c8abb331126ffdfd439e073f160af">&#9670;&nbsp;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;Cronologia::iterator, bool&gt; Cronologia::insert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classFechaHistorica.html">FechaHistorica</a> &amp;&#160;</td>
+          <td class="paramname"><em>fh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para insertar una <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fh</td><td><code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> a insertar en la <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4ad8a9b8f15c8f71fefea5030531041b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ad8a9b8f15c8f71fefea5030531041b">&#9670;&nbsp;</a></span>ObtenerEventos() <span class="overload">[1/2]</span></h2>
 
@@ -169,10 +302,11 @@ Amigas</h2></td></tr>
 <p>Método que obtiene los eventos ocurridos en un año preciso. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">anio</td><td>año del que se quieren obtener los eventos </td></tr>
+    <tr><td class="paramname">anio</td><td>año del que se quieren obtener los eventos</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto de clase <code><a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a></code> con los eventos ocurridos en dicho año </dd></dl>
 
 </div>
 </div>
@@ -206,15 +340,16 @@ Amigas</h2></td></tr>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">anioDesde</td><td>año desde el que se quieren obtener los eventos </td></tr>
-    <tr><td class="paramname">anioHasta</td><td>año hasta el que se quieren obtener los eventos </td></tr>
+    <tr><td class="paramname">anioHasta</td><td>año hasta el que se quieren obtener los eventos</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto de clase <code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> con los eventos ocurridos en el intervalo de años </dd></dl>
 
 </div>
 </div>
-<a id="a0279f2e6294c330c0bcd79e37130cf68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0279f2e6294c330c0bcd79e37130cf68">&#9670;&nbsp;</a></span>operator!=()</h2>
+<a id="aa0628d57993fa3a9d9d6a8e5f2656a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0628d57993fa3a9d9d6a8e5f2656a59">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +359,7 @@ Amigas</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCronologia.html">Cronologia</a> &amp;&#160;</td>
           <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,6 +368,32 @@ Amigas</h2></td></tr>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td><code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> a comparar con el objeto implícito </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae70a0d10d6a808310c187bb861fb562d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70a0d10d6a808310c187bb861fb562d">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCronologia.html">Cronologia</a> Cronologia::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classCronologia.html">Cronologia</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sobrecarga del operador +. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><code><a class="el" href="classCronologia.html" title="T.D.A. Cronologia.">Cronologia</a></code> a sumar con el objeto implícito </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,8 +426,8 @@ Amigas</h2></td></tr>
 
 </div>
 </div>
-<a id="a0912ed9512d7a3ad8fb63ec6acc248d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0912ed9512d7a3ad8fb63ec6acc248d5">&#9670;&nbsp;</a></span>operator==()</h2>
+<a id="a36d69c3a82b267660f011e633e5f4ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d69c3a82b267660f011e633e5f4ef5">&#9670;&nbsp;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,7 +437,7 @@ Amigas</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCronologia.html">Cronologia</a> &amp;&#160;</td>
           <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -383,8 +544,8 @@ Amigas</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentación de los datos miembro</h2>
-<a id="a4e727365450190e258032ce56e168342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e727365450190e258032ce56e168342">&#9670;&nbsp;</a></span>fechas_historicas</h2>
+<a id="a00325466e09605fce32c137368f64ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00325466e09605fce32c137368f64ec5">&#9670;&nbsp;</a></span>fechas_historicas</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +554,7 @@ Amigas</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classLista.html">Lista</a>&lt;<a class="el" href="classFechaHistorica.html">FechaHistorica</a>&gt; Cronologia::fechas_historicas</td>
+          <td class="memname">std::map&lt;int, <a class="el" href="classFechaHistorica.html">FechaHistorica</a>&gt; Cronologia::fechas_historicas</td>
         </tr>
       </table>
   </td>
@@ -402,14 +563,14 @@ Amigas</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classLista.html" title="T.D.A. Lista.">Lista</a> de objetos tipo <a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a> </p>
+<p>Map de objetos tipo <a class="el" href="classFechaHistorica.html" title="T.D.A. FechaHistorica.">FechaHistorica</a> y su respectivo año </p>
 
-<p class="definition">Definición en la línea <a class="el" href="cronologia_8h_source.html#l00038">38</a> del archivo <a class="el" href="cronologia_8h_source.html">cronologia.h</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="cronologia__stl_8h_source.html#l00038">38</a> del archivo <a class="el" href="cronologia__stl_8h_source.html">cronologia_stl.h</a>.</p>
 
 </div>
 </div>
 <hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
-<li>include/<a class="el" href="cronologia_8h_source.html">cronologia.h</a></li>
+<li>include/<a class="el" href="cronologia__stl_8h_source.html">cronologia_stl.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

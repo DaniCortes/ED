@@ -31,14 +31,6 @@ var NAVTREE =
       [ "Invariante de la representación", "repFechaHistorica.html#invFechaHistorica", null ],
       [ "Función de abstracción", "repFechaHistorica.html#faFechaHistorica", null ]
     ] ],
-    [ "Rep del TDA NodoLista", "repNodoLista.html", [
-      [ "Invariante de la representación", "repNodoLista.html#invNodoLista", null ],
-      [ "Función de abstracción", "repNodoLista.html#faNodoLista", null ]
-    ] ],
-    [ "Rep del TDA Lista", "repLista.html", [
-      [ "Invariante de la representación", "repLista.html#invLista", null ],
-      [ "Función de abstracción", "repLista.html#faLista", null ]
-    ] ],
     [ "Clases", "annotated.html", [
       [ "Lista de clases", "annotated.html", "annotated_dup" ],
       [ "Índice de clases", "classes.html", null ],

@@ -1,14 +1,28 @@
 var classCronologia =
 [
+    [ "const_iterator", "classCronologia.html#a26b43de24e234835682e8ee37ccade0b", null ],
+    [ "iterator", "classCronologia.html#a6041c6cf6185127096c7c8d94219d9fd", null ],
     [ "Cronologia", "classCronologia.html#ac0026b1919148f6cd6cf4ca4c357771e", null ],
     [ "Cronologia", "classCronologia.html#a35694d459c7f2bc902b8db6abf13662d", null ],
     [ "~Cronologia", "classCronologia.html#a7e995892e46a00b54d70a905e2bdbc53", null ],
+    [ "begin", "classCronologia.html#afee920b0ed7aff63cc14fad990c85595", null ],
+    [ "begin", "classCronologia.html#a876db65000bccd70a2dedb52a0fbfd2e", null ],
+    [ "empty", "classCronologia.html#a0ef1b616209fecb25db2e161f8e4da95", null ],
+    [ "end", "classCronologia.html#afa08dc5a9a3812911dabdf7599222e85", null ],
+    [ "end", "classCronologia.html#ab99338971de24416107afaa1d52ec545", null ],
+    [ "getFechasPalabraClave", "classCronologia.html#a868ed0ac4e029a357f1b4ff2c4ff0cd6", null ],
+    [ "getMaxEventosEnFechaHistorica", "classCronologia.html#a1a19c86a063a8ea759496c465be6267d", null ],
+    [ "getPromedioEventos", "classCronologia.html#a6c3682470ab0e0773c003590b7f1b990", null ],
+    [ "getTotalEventos", "classCronologia.html#a10173da4fe8ce6a95a6125f0a553767d", null ],
+    [ "insert", "classCronologia.html#a4f3c8abb331126ffdfd439e073f160af", null ],
     [ "ObtenerEventos", "classCronologia.html#a4ad8a9b8f15c8f71fefea5030531041b", null ],
     [ "ObtenerEventos", "classCronologia.html#a308f943882094a91ae785ce92dc45fea", null ],
-    [ "operator!=", "classCronologia.html#a0279f2e6294c330c0bcd79e37130cf68", null ],
+    [ "operator!=", "classCronologia.html#aa0628d57993fa3a9d9d6a8e5f2656a59", null ],
+    [ "operator+", "classCronologia.html#ae70a0d10d6a808310c187bb861fb562d", null ],
     [ "operator=", "classCronologia.html#ac9fddecd2c0a8416d7896d61c74e4dd8", null ],
-    [ "operator==", "classCronologia.html#a0912ed9512d7a3ad8fb63ec6acc248d5", null ],
+    [ "operator==", "classCronologia.html#a36d69c3a82b267660f011e633e5f4ef5", null ],
+    [ "size", "classCronologia.html#a289ad0396f67f17a311970bbd5d6aba2", null ],
     [ "operator<<", "classCronologia.html#af04008159f7a4fa193a3e89fd377f1a6", null ],
     [ "operator>>", "classCronologia.html#a71fb3b7659728c1e4a3a429ec74e5ad9", null ],
-    [ "fechas_historicas", "classCronologia.html#a4e727365450190e258032ce56e168342", null ]
+    [ "fechas_historicas", "classCronologia.html#a00325466e09605fce32c137368f64ec5", null ]
 ];

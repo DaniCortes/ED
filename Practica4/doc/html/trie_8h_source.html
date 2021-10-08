@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Árbol Trie: Fichero Fuente include/trie.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Árbol Trie
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Buscar');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('trie_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">trie.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _TRIE_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _TRIE_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCelda.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCelda.html">Celda</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCelda.html#a33bc94a333a201a1b9847b1cb97c7848">   35</a></span>&#160;   <span class="keywordtype">char</span> <a class="code" href="classCelda.html#a33bc94a333a201a1b9847b1cb97c7848">caracter</a>;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCelda.html#ad7710348a882327a69949e1837830115">   37</a></span>&#160;   <a class="code" href="classCelda.html">Celda</a> *<a class="code" href="classCelda.html#ad7710348a882327a69949e1837830115">padre</a>;     </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classCelda.html#a4fb17f982ec1e4c1f7003c93fddb5153">   38</a></span>&#160;   <a class="code" href="classCelda.html">Celda</a> *<a class="code" href="classCelda.html#a4fb17f982ec1e4c1f7003c93fddb5153">hijo_izq</a>;  </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCelda.html#a095f411f1b705c862803c64486f93744">   39</a></span>&#160;   <a class="code" href="classCelda.html">Celda</a> *<a class="code" href="classCelda.html#a095f411f1b705c862803c64486f93744">herm_der</a>;  </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <a class="code" href="classCelda.html#af1dadd95735043294599490d4abc6dc1">Celda</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <a class="code" href="classCelda.html#a256de3b5c647bbbe404e4b40aca0d0f2">~Celda</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <a class="code" href="classCelda.html#af1dadd95735043294599490d4abc6dc1">Celda</a>(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <a class="code" href="classCelda.html#af1dadd95735043294599490d4abc6dc1">Celda</a>(<span class="keyword">const</span> <a class="code" href="classCelda.html">Celda</a> &amp;c);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <a class="code" href="classCelda.html#af1dadd95735043294599490d4abc6dc1">Celda</a>(<span class="keyword">const</span> <a class="code" href="classCelda.html">Celda</a> &amp;c, <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <a class="code" href="classCelda.html">Celda</a> &amp;<a class="code" href="classCelda.html#ae7c0fc67a3d7439a9f348599f59683e4">operator=</a>(<span class="keyword">const</span> <a class="code" href="classCelda.html">Celda</a> &amp;c);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTrie.html">Trie</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">typedef</span> <a class="code" href="classCelda.html">Celda</a> *<a class="code" href="classCelda.html">Nodo</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classTrie.html">   98</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTrie.html">Trie</a> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classTrie.html#ab92c6ff82719f9fdbbe5e97f8eee8b95">  116</a></span>&#160;   <a class="code" href="classCelda.html">Nodo</a> <a class="code" href="classTrie.html#ab92c6ff82719f9fdbbe5e97f8eee8b95">raiz</a>; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   std::string <a class="code" href="classTrie.html#aff688d2e99f7bfaef0441c6cb4ecd21b">toLowerString</a>(<span class="keyword">const</span> std::string str);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classTrie.html#a6851efbfd074a4dd4d8065c1b4f01182">podar</a>(<a class="code" href="classCelda.html">Nodo</a> n);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;   <a class="code" href="classCelda.html">Nodo</a> <a class="code" href="classTrie.html#a48dda1aa99b057803d06b18141fd86f9">getHermanoIzquierdo</a>(<a class="code" href="classCelda.html">Nodo</a> n);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;   <a class="code" href="classCelda.html">Nodo</a> <a class="code" href="classTrie.html#a33a61661070cd51f92f4717dd83bb4f5">buscarCaracter</a>(<span class="keywordtype">char</span> c, <a class="code" href="classCelda.html">Nodo</a> n);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classTrie.html#ad0424218f0f37b0ad8091632f0c10399">estaVacio</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;   <a class="code" href="classCelda.html">Nodo</a> <a class="code" href="classTrie.html#af5ff8985096c34d547097d4c6918577b">crearHermanoDerecho</a>(<a class="code" href="classCelda.html">Nodo</a> n);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;   <a class="code" href="classCelda.html">Nodo</a> <a class="code" href="classTrie.html#aa92dc731091d398ff3eca3bbd04d3cda">insertarCaracter</a>(<span class="keywordtype">char</span> c, <a class="code" href="classCelda.html">Nodo</a> n);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;   <a class="code" href="classTrie.html#a6af57e9f25d0d0a2d59eea5a4a802908">Trie</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;   <a class="code" href="classTrie.html#a6af57e9f25d0d0a2d59eea5a4a802908">Trie</a>(std::string palabra);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   <a class="code" href="classTrie.html#abf9d6f48d556e09d1b292412df153a4b">~Trie</a>();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classTrie.html#a603d4e5f49458785b3abf1cce13933f6">insertarPalabra</a>(std::string palabra);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classTrie.html#add36ccea5f24ce497f86db752ae1b302">buscarPalabra</a>(std::string palabra);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;};</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclassCelda_html_a33bc94a333a201a1b9847b1cb97c7848"><div class="ttname"><a href="classCelda.html#a33bc94a333a201a1b9847b1cb97c7848">Celda::caracter</a></div><div class="ttdeci">char caracter</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00035">trie.h:35</a></div></div>
+<div class="ttc" id="aclassTrie_html_a603d4e5f49458785b3abf1cce13933f6"><div class="ttname"><a href="classTrie.html#a603d4e5f49458785b3abf1cce13933f6">Trie::insertarPalabra</a></div><div class="ttdeci">void insertarPalabra(std::string palabra)</div><div class="ttdoc">Método que inserta un string en el árbol.</div></div>
+<div class="ttc" id="aclassCelda_html"><div class="ttname"><a href="classCelda.html">Celda</a></div><div class="ttdoc">T.D.A. Celda.</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00018">trie.h:18</a></div></div>
+<div class="ttc" id="aclassCelda_html_ae7c0fc67a3d7439a9f348599f59683e4"><div class="ttname"><a href="classCelda.html#ae7c0fc67a3d7439a9f348599f59683e4">Celda::operator=</a></div><div class="ttdeci">Celda &amp; operator=(const Celda &amp;c)</div><div class="ttdoc">Sobrecarga del operador =.</div></div>
+<div class="ttc" id="aclassCelda_html_a095f411f1b705c862803c64486f93744"><div class="ttname"><a href="classCelda.html#a095f411f1b705c862803c64486f93744">Celda::herm_der</a></div><div class="ttdeci">Celda * herm_der</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00039">trie.h:39</a></div></div>
+<div class="ttc" id="aclassTrie_html_abf9d6f48d556e09d1b292412df153a4b"><div class="ttname"><a href="classTrie.html#abf9d6f48d556e09d1b292412df153a4b">Trie::~Trie</a></div><div class="ttdeci">~Trie()</div><div class="ttdoc">destructor</div></div>
+<div class="ttc" id="aclassTrie_html"><div class="ttname"><a href="classTrie.html">Trie</a></div><div class="ttdoc">T.D.A. Árbol Trie.</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00098">trie.h:98</a></div></div>
+<div class="ttc" id="aclassTrie_html_af5ff8985096c34d547097d4c6918577b"><div class="ttname"><a href="classTrie.html#af5ff8985096c34d547097d4c6918577b">Trie::crearHermanoDerecho</a></div><div class="ttdeci">Nodo crearHermanoDerecho(Nodo n)</div><div class="ttdoc">Método que crea un Nodo lo más derecha posible del nodo pasado por parámetro.</div></div>
+<div class="ttc" id="aclassTrie_html_aa92dc731091d398ff3eca3bbd04d3cda"><div class="ttname"><a href="classTrie.html#aa92dc731091d398ff3eca3bbd04d3cda">Trie::insertarCaracter</a></div><div class="ttdeci">Nodo insertarCaracter(char c, Nodo n)</div><div class="ttdoc">Método que inserta un char en un Nodo o en alguno de sus hermanos derechos.</div></div>
+<div class="ttc" id="aclassTrie_html_a48dda1aa99b057803d06b18141fd86f9"><div class="ttname"><a href="classTrie.html#a48dda1aa99b057803d06b18141fd86f9">Trie::getHermanoIzquierdo</a></div><div class="ttdeci">Nodo getHermanoIzquierdo(Nodo n)</div><div class="ttdoc">Método que obtiene el hermano izquierdo del Nodo pasado por parámetro.</div></div>
+<div class="ttc" id="aclassCelda_html_ad7710348a882327a69949e1837830115"><div class="ttname"><a href="classCelda.html#ad7710348a882327a69949e1837830115">Celda::padre</a></div><div class="ttdeci">Celda * padre</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00037">trie.h:37</a></div></div>
+<div class="ttc" id="aclassTrie_html_add36ccea5f24ce497f86db752ae1b302"><div class="ttname"><a href="classTrie.html#add36ccea5f24ce497f86db752ae1b302">Trie::buscarPalabra</a></div><div class="ttdeci">bool buscarPalabra(std::string palabra)</div><div class="ttdoc">Método que comprueba si una palabra está en el árbol.</div></div>
+<div class="ttc" id="aclassTrie_html_a6af57e9f25d0d0a2d59eea5a4a802908"><div class="ttname"><a href="classTrie.html#a6af57e9f25d0d0a2d59eea5a4a802908">Trie::Trie</a></div><div class="ttdeci">Trie()</div><div class="ttdoc">Constructor por defecto.</div></div>
+<div class="ttc" id="aclassCelda_html_af1dadd95735043294599490d4abc6dc1"><div class="ttname"><a href="classCelda.html#af1dadd95735043294599490d4abc6dc1">Celda::Celda</a></div><div class="ttdeci">Celda()</div><div class="ttdoc">Constructor por defecto.</div></div>
+<div class="ttc" id="aclassTrie_html_a33a61661070cd51f92f4717dd83bb4f5"><div class="ttname"><a href="classTrie.html#a33a61661070cd51f92f4717dd83bb4f5">Trie::buscarCaracter</a></div><div class="ttdeci">Nodo buscarCaracter(char c, Nodo n)</div><div class="ttdoc">Método busca un carácter en un nodo y en sus hermanos derechos.</div></div>
+<div class="ttc" id="aclassTrie_html_ad0424218f0f37b0ad8091632f0c10399"><div class="ttname"><a href="classTrie.html#ad0424218f0f37b0ad8091632f0c10399">Trie::estaVacio</a></div><div class="ttdeci">bool estaVacio()</div><div class="ttdoc">Método que comprueba si el árbol está vacío.</div></div>
+<div class="ttc" id="aclassCelda_html_a256de3b5c647bbbe404e4b40aca0d0f2"><div class="ttname"><a href="classCelda.html#a256de3b5c647bbbe404e4b40aca0d0f2">Celda::~Celda</a></div><div class="ttdeci">~Celda()</div><div class="ttdoc">Destructor.</div></div>
+<div class="ttc" id="aclassCelda_html_a4fb17f982ec1e4c1f7003c93fddb5153"><div class="ttname"><a href="classCelda.html#a4fb17f982ec1e4c1f7003c93fddb5153">Celda::hijo_izq</a></div><div class="ttdeci">Celda * hijo_izq</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00038">trie.h:38</a></div></div>
+<div class="ttc" id="aclassTrie_html_a6851efbfd074a4dd4d8065c1b4f01182"><div class="ttname"><a href="classTrie.html#a6851efbfd074a4dd4d8065c1b4f01182">Trie::podar</a></div><div class="ttdeci">void podar(Nodo n)</div><div class="ttdoc">Método para eliminar un nodo y todos sus descendientes.</div></div>
+<div class="ttc" id="aclassTrie_html_ab92c6ff82719f9fdbbe5e97f8eee8b95"><div class="ttname"><a href="classTrie.html#ab92c6ff82719f9fdbbe5e97f8eee8b95">Trie::raiz</a></div><div class="ttdeci">Nodo raiz</div><div class="ttdef"><b>Definition:</b> <a href="trie_8h_source.html#l00116">trie.h:116</a></div></div>
+<div class="ttc" id="aclassTrie_html_aff688d2e99f7bfaef0441c6cb4ecd21b"><div class="ttname"><a href="classTrie.html#aff688d2e99f7bfaef0441c6cb4ecd21b">Trie::toLowerString</a></div><div class="ttdeci">std::string toLowerString(const std::string str)</div><div class="ttdoc">Método devuelve la palabra pasada por parámetro con todas las letras en minúscula.</div></div>
+<hr>
+<small>Facultad de Educación, Economía y Tecnología de Ceuta. Universidad de Granada.
+</small>

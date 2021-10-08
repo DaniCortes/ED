@@ -9,6 +9,19 @@
       "unordered_map": "cpp",
       "unordered_set": "cpp",
       "string_view": "cpp",
-      "initializer_list": "cpp"
+      "initializer_list": "cpp",
+      "*.tcc": "cpp",
+      "cmath": "cpp",
+      "exception": "cpp",
+      "functional": "cpp",
+      "memory": "cpp",
+      "random": "cpp",
+      "istream": "cpp",
+      "numeric": "cpp",
+      "ostream": "cpp",
+      "sstream": "cpp",
+      "streambuf": "cpp",
+      "system_error": "cpp",
+      "iostream": "cpp"
    }
 }

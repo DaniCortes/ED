@@ -2,125 +2,142 @@
 
 using namespace std;
 
-FechaHistorica::FechaHistorica() {
-   fecha.first = 0;
-}
+FechaHistorica::FechaHistorica() {}
 
 FechaHistorica::FechaHistorica(const FechaHistorica &f) {
-   fecha.first = f.fecha.first;
-   fecha.second = f.fecha.second;
+  fecha.first = f.fecha.first;
+  fecha.second = f.fecha.second;
 }
 
 FechaHistorica::FechaHistorica(const int anio, const set<string> &eventos) {
-   fecha.first = anio;
-   fecha.second = eventos;
+  fecha.first = anio;
+  fecha.second = eventos;
 }
 
 FechaHistorica::~FechaHistorica() {
-   fecha.second.clear();
+  fecha.second.clear();
 }
 
 void FechaHistorica::setAnio(int anio) {
-   fecha.first = anio;
+  fecha.first = anio;
 }
 
 int FechaHistorica::getAnio() const {
-   return fecha.first;
+  return fecha.first;
 }
 
 int FechaHistorica::getNumEventos() const {
-   return fecha.second.size();
+  return fecha.second.size();
 }
 
 FechaHistorica FechaHistorica::getEventosPalabraClave(string palabra_clave) {
-   FechaHistorica tmp;
-   tmp.fecha.first = fecha.first;
-   FechaHistorica::iterator it;
-   for(string aux: fecha.second) {
-      if (aux.find(palabra_clave) != string::npos) {
-         tmp.fecha.second.insert(aux);
-      }
-   } 
-   return tmp;
+  FechaHistorica tmp;
+  tmp.fecha.first = fecha.first;
+  for (string aux : *this) {
+    if (aux.find(palabra_clave) != string::npos) {
+      tmp.insert(aux);
+    }
+  }
+  return tmp;
 }
 
 FechaHistorica::iterator FechaHistorica::begin() {
-   return fecha.second.begin();
+  return fecha.second.begin();
 }
 
 FechaHistorica::iterator FechaHistorica::end() {
-   return fecha.second.end(); 
+  return fecha.second.end();
 }
 
 FechaHistorica::const_iterator FechaHistorica::begin() const {
-   return fecha.second.begin();
+  return fecha.second.begin();
 }
 
 FechaHistorica::const_iterator FechaHistorica::end() const {
-   return fecha.second.end();
+  return fecha.second.end();
 }
 
-FechaHistorica& FechaHistorica::operator=(const FechaHistorica &f) {
-   fecha.first = f.fecha.first;
-   fecha.second = f.fecha.second;
-   return *this;
+pair<FechaHistorica::iterator, bool> FechaHistorica::insert(
+    const string evento) {
+  return fecha.second.insert(evento);
 }
 
-FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) {
-   FechaHistorica tmp = *this;
-   if (fecha.first == f.fecha.first){
-      for (string evento: f.fecha.second){
-         tmp.fecha.second.insert(evento);
-      }
-   }
-   return tmp;
+bool FechaHistorica::empty() const {
+  return fecha.second.empty();
+}
+
+FechaHistorica &FechaHistorica::operator=(const FechaHistorica &f) {
+  fecha.first = f.fecha.first;
+  fecha.second = f.fecha.second;
+  return *this;
+}
+
+FechaHistorica FechaHistorica::operator+(const FechaHistorica &f) const {
+  FechaHistorica tmp = *this;
+  if (fecha.first == f.fecha.first) {
+    for (string evento : f) {
+      tmp.insert(evento);
+    }
+  }
+  return tmp;
+}
+
+FechaHistorica &FechaHistorica::operator+=(const FechaHistorica &f) {
+  if (fecha.first == f.fecha.first) {
+    *this = *this + f;
+  }
+  return *this;
 }
 
 bool FechaHistorica::operator<(const FechaHistorica &f) const {
-   return (fecha.first < f.fecha.first) ? true : false;
+  return (fecha.first < f.fecha.first) ? true : false;
 }
 
 bool FechaHistorica::operator>(const FechaHistorica &f) const {
-   return (fecha.first > f.fecha.first) ? true : false;
+  return (fecha.first > f.fecha.first) ? true : false;
 }
 
 bool FechaHistorica::operator==(const FechaHistorica &f) const {
-   return (fecha.first == f.fecha.first && fecha.second == f.fecha.second) ? true : false;
+  return (fecha.first == f.fecha.first && fecha.second == f.fecha.second)
+             ? true
+             : false;
 }
 
 bool FechaHistorica::operator!=(const FechaHistorica &f) const {
-   return !(*this == f);
+  return !(*this == f);
 };
 
 ostream &operator<<(ostream &os, const FechaHistorica &f) {
-   os << "Año: " << f.fecha.first << endl;
-   int i = 0;
-   for(string evento: f.fecha.second) {
-      os << "\t Evento " << ++i << ": " << evento << endl;
-   }
+  os << "\tAño: " << f.fecha.first << endl;
+  int i = 0;
+  if (f.getNumEventos() > 0) {
+    for (string evento : f) {
+      os << "\t\tEvento " << ++i << ": " << evento << endl;
+    }
 
-   os << endl;
-   
-   return os;
+    os << endl;
+  } else {
+    os << "\t\tNo hay ningún evento\n";
+  }
+  return os;
 }
 
-// Este método se proporciona a medio hacer para facilitar la lectura de una FechaHistorica a partir de un fichero
 istream &operator>>(istream &is, FechaHistorica &f) {
-   string s;
+  string s;
 
-   getline(is, s, '#');
+  getline(is, s, '#');
 
-   int anio = stoi(s);
-   cout << "\tLeido año: " << anio << endl;
-   f.fecha.first = anio;
+  int anio = stoi(s);
+  int i = 0;
+  cout << "\tLeído año: " << anio << endl;
+  f.fecha.first = anio;
 
-   s="";
-   while (getline(is, s, '#')) {
-      cout << "\t\tLeido evento: " << s << endl;
-      f.fecha.second.insert(s);
-      s="";
-   }
+  s = "";
+  while (getline(is, s, '#')) {
+    cout << "\t\tLeído evento " << ++i << ": " << s << endl;
+    f.insert(s);
+    s = "";
+  }
 
-   return is;
+  return is;
 }
-
